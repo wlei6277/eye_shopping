@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_04_30_060941) do
     t.string "name"
     t.integer "price"
     t.bigint "department_id"
-    t.string "color"
+    t.integer "color"
     t.text "url_link"
     t.text "description"
     t.datetime "created_at", null: false
