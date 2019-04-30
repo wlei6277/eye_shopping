@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-    byebug
+  
   end
 
   # PATCH/PUT /products/1
