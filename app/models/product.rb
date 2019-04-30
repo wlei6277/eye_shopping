@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :department_id
+  belongs_to :user
+  belongs_to :department
 end

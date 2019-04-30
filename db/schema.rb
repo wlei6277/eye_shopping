@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_040639) do
+ActiveRecord::Schema.define(version: 2019_04_30_042329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
@@ -21,12 +31,30 @@ ActiveRecord::Schema.define(version: 2019_04_29_040639) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_favourites_on_product_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.bigint "follower_id"
+    t.bigint "following_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id"], name: "index_followers_on_follower_id"
+    t.index ["following_id"], name: "index_followers_on_following_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
     t.integer "price"
     t.bigint "department_id"
-    t.string "color"
+    t.integer "color"
     t.text "url_link"
     t.text "description"
     t.datetime "created_at", null: false
@@ -43,6 +71,12 @@ ActiveRecord::Schema.define(version: 2019_04_29_040639) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "products"
+  add_foreign_key "comments", "users"
+  add_foreign_key "favourites", "products"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "followers", "users", column: "follower_id"
+  add_foreign_key "followers", "users", column: "following_id"
   add_foreign_key "products", "departments"
   add_foreign_key "products", "users"
 end
