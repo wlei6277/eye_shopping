@@ -4,5 +4,6 @@ class Product < ApplicationRecord
   has_many :comments
   has_many :favourites
   enum color: { red: 0, blue: 1, green: 2, yellow: 3, brown: 4, black: 5 }
+  has_one_attached :picture
 
 end
