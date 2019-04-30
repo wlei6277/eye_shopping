@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    byebug
   end
 
   # PATCH/PUT /products/1
@@ -69,6 +70,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:user_id_id, :name, :price, :department_id_id, :color, :url_link, :description)
+      params.require(:product).permit(:user_id, :name, :price, :department_id, :color, :url_link, :description, :picture)
     end
 end
