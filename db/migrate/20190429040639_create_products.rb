@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :price
       t.references :department, foreign_key: true
-      t.string :color
+      t.integer :color
       t.text :url_link
       t.text :description
 
