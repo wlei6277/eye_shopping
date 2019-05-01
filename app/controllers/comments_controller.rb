@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @prod = Product.find(params[:id])
     @comment = Comment.new
   end
 
@@ -27,7 +28,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-
+    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }

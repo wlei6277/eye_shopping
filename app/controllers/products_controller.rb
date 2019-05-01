@@ -1,21 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+ before_action :color_enum, only: [:new, :edit]
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = Comment.where(product_id: @product.id)
+    @comments  = Comment.where(product_id: @product.id)
   end
 
   # GET /products/new
   def new
     @product = Product.new
+    @departments = Department.all
+    
   end
 
   # GET /products/1/edit
@@ -73,4 +76,9 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:user_id, :name, :price, :department_id, :color, :url_link, :description, :picture)
     end
+
+    def color_enum
+      @colors = Product.colors.keys
+    end
 end
+ 
