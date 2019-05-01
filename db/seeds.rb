@@ -36,7 +36,7 @@ for i in 1..50
         description: "empty"
     )
     users.push(user)
-    puts "Created #{i} users"
+    puts "Created #{i} products"
 end
 
 for i in 1..10
@@ -48,3 +48,14 @@ for i in 1..10
     comments.push(comment)
     puts "Created #{i} comments"
 end
+
+for i in 1...50
+    following = Following.create(follower_id:i, following_id: (50-i))
+    puts "Created #{i} followings"
+end
+
+for i in 1..50
+    favourite = Favourite.create(user_id:i, product_id: i)
+    puts "Created #{i} favourites"
+end
+
