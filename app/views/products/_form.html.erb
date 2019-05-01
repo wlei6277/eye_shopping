@@ -26,15 +26,25 @@
     <%= form.number_field :price %>
   </div>
 
-  <div class="field">
+   <div class="field">
     <%= form.label :department_id %>
-    <%= form.text_field :department_id %>
+    <%= form.select(:department_id, @departments.map{|v| [v.name,v.id]}) %>
   </div>
 
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
-  </div>
+
+ <div class="field">
+ <table>
+ <% @colors.each do |option| %>
+ <tbody>
+ <tr>
+  <td>  <%= form.radio_button :color, option %> </td>
+  <td><%= form.label "color_#{option}".to_sym, option %></td>
+  </tr>
+  </tbody>
+ 
+    <% end %>
+  </table>
+   </div>
 
   <div class="field">
     <%= form.label :url_link %>
