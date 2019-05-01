@@ -52,8 +52,14 @@
     </tr>
   </thead>
 
+
   <tbody>
+  <p>
+
+</p>
+  <% if @comment.present? %>
     <% @comments.each do |comment| %>
+  
       <tr>
         <td><%= comment.product.name %></td>
         <td><%= comment.user.name %></td>
@@ -62,7 +68,9 @@
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    
     <% end %>
+    <%end%>
   </tbody>
 </table>
 

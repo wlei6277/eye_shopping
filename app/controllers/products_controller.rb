@@ -10,8 +10,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = Comment.find_by_product_id(@product.id)
-   
+    @comments = Comment.all
+    @comment = Comment.find_by_product_id(@product.id)
+  
   end
 
   # GET /products/new
