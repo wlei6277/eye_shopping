@@ -8,6 +8,8 @@
 departments = []
 users = []
 products = []
+comments = []
+
 for i in 1..10
     department = Department.create(
         name: Faker::Commerce.department, 
@@ -16,7 +18,7 @@ for i in 1..10
     puts "Created #{i} departments"
 end
 
-for i in 1..100
+for i in 1..50
     user = User.create(
         name: Faker::Name.name,
         email: Faker::Internet.email,
@@ -35,4 +37,14 @@ for i in 1..100
     )
     users.push(user)
     puts "Created #{i} users"
+end
+
+for i in 1..10
+    comment = Comment.create(
+        product_id: rand(1..50),
+        user_id: i,
+        body: Faker::Lorem.sentence, 
+    )
+    comments.push(comment)
+    puts "Created #{i} comments"
 end
