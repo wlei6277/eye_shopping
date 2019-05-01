@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = Comment.find_by_product_id(@product.id)
+   
   end
 
   # GET /products/new
@@ -35,7 +37,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-    byebug
+  
   end
 
   # PATCH/PUT /products/1

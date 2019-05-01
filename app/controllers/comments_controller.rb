@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
+# @comments = Comment.all.order(:product_id).group_by(&:first_title_letter)
+
   end
 
   # GET /comments/1
