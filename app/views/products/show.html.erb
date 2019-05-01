@@ -57,7 +57,7 @@
   <p>
 
 </p>
-  <% if @comment.present? %>
+  <% if @comments.present? %>
     <% @comments.each do |comment| %>
   
       <tr>
@@ -73,7 +73,7 @@
     <%end%>
   </tbody>
 </table>
-
+<%= link_to 'New Comment', new_comment_path %>
 <br>
 
 
