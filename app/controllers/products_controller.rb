@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+ before_action :set_product, only: [:show, :edit, :update, :destroy]
+ before_action :set_favourite, only: [:show, :edit, :update, :destroy]
  before_action :color_enum, only: [:new, :edit, :create]
  before_action :department_list, only: [:new, :edit, :create]
+ before_action :set_product, only: [:show, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
@@ -71,6 +73,11 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    #set_favorite makes the favourite of a given product available to the view and helper functions
+    def set_favourite
+      @favourite = Favourite.where(user_id: current_user.id, product_id: set_product()).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
