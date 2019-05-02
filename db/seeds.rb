@@ -19,10 +19,11 @@ for i in 1..10
 end
 
 for i in 1..50
-    user = User.create(
+    user = User.create!(
         name: Faker::Name.name,
         email: Faker::Internet.email,
-        password: "abc"
+        password: 'topsecret',
+        password_confirmation: 'topsecret'
     )
     users.push(user)
     puts "Created #{i} users"
