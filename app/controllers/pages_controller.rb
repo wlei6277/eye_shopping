@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
     def home
+        @products = Product.all
     end
-    def my_board
+    def myboard
+        @products = Product.all
     end
-    def my_account
+    def myaccount
     end
 end
