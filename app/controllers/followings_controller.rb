@@ -24,6 +24,12 @@ class FollowingsController < ApplicationController
   # POST /followings
   # POST /followings.json
   def create
+    #create a following between the user and person they wish to follow
+    #this action is called when the user clicks the favourite button on a product image (favouratible products are multiple sections of Eyeshopper e.g. home page / another users board / the view page for a product etc...)
+    #a following is created by using the following parameters:
+    #  -the id of the user currently logged in; and 
+    #  -the id of the product which was favourited (where the button resides)
+
     @following = Following.new(following_params)
 
     respond_to do |format|

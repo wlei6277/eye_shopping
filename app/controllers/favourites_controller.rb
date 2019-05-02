@@ -1,10 +1,23 @@
 class FavouritesController < ApplicationController
-  before_action :set_favourite, only: [:show, :edit, :update, :destroy]
+  before_action :set_favourite, only: [:destroy]
 
   # GET /favourites
   # GET /favourites.json
+  # The index action queries the favourites table to find all 
+  # of the favourites associated with the user which is currently logged in
+  # We then need to loop through these favourites and find all of the products associated with favourite
+  # These products are stored in the @favourited_products instance variable
   def index
-    @favourites = Favourite.all
+    
+    @favourites = Favourite.find_by_user_id(current_user.id)
+    if @favourites.class == "Favourite::ActiveRecord_Relation"
+      @favourited_products = []
+      for favourite in @favourites
+        @favourited_products.push(Product.find(id: favourite.product_id))
+      end
+    else
+      @favourited_products = Product.find(id: @favourite.id)
+    end
   end
 
   # GET /favourites/1
@@ -24,15 +37,14 @@ class FavouritesController < ApplicationController
   # POST /favourites
   # POST /favourites.json
   def create
-    #create a following between the user and person they wish to follow
+    #creates the relationship between the currently logged in user and the product they wish to favourite
     #this action is called when the user clicks the favourite button on a product image (favouratible products are multiple sections of Eyeshopper e.g. home page / another users board / the view page for a product etc...)
     #a following is created by using the following parameters:
     #  -the id of the user currently logged in; and 
     #  -the id of the product which was favourited (where the button resides)  
     
     @favourite = Favourite.new(favourite_params)
-    byebug
-
+    @favourite.save
 
   end
 
@@ -52,21 +64,25 @@ class FavouritesController < ApplicationController
 
   # DELETE /favourites/1
   # DELETE /favourites/1.json
+  # Destroy action is called when the user clicks the button to unfavourite a product
+  
   def destroy
     @favourite.destroy
-    respond_to do |format|
-      format.html { redirect_to favourites_url, notice: 'Favourite was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between actions.  
+    # The set_favourite action is only invoked for the destroy action
+    # The favourite is passed through the helper function on the _like partial
+    
     def set_favourite
       @favourite = Favourite.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # We only allow the parameters to enable a user favourite a product:
+    #  > user_id: the id of the logged in user
+    #  > product_id: the id of the product the user has favourited
     def favourite_params
       params.permit(:user_id, :product_id)    
     end
