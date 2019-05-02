@@ -27,8 +27,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-    
+    @prod = Product.find(params[:id])
+    @comment = @prod.comments.create(comment_params[:comment])
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -39,6 +39,8 @@ class CommentsController < ApplicationController
       end
     end
   end
+
+
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
