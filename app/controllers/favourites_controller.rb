@@ -33,15 +33,7 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.new(favourite_params)
     byebug
 
-    respond_to do |format|
-      if @favourite.save
-        format.html { redirect_to @favourite, notice: 'Favourite was successfully created.' }
-        format.json { render :show, status: :created, location: @favourite }
-      else
-        format.html { render :new }
-        format.json { render json: @favourite.errors, status: :unprocessable_entity }
-      end
-    end
+
   end
 
   # PATCH/PUT /favourites/1
@@ -76,6 +68,6 @@ class FavouritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favourite_params
-      params.require(:favourite).permit(:user_id, :product_id)    
+      params.permit(:user_id, :product_id)    
     end
 end
