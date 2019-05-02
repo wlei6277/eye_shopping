@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
- before_action :color_enum, only: [:new, :edit]
+ before_action :color_enum, only: [:new, :edit, :create]
+ before_action :department_list, only: [:new, :edit, :create]
   # GET /products
   # GET /products.json
   def index
@@ -80,5 +81,10 @@ class ProductsController < ApplicationController
     def color_enum
       @colors = Product.colors.keys
     end
+
+    def department_list
+      @departments = Department.all
+    end
+
 end
  
