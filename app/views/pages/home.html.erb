@@ -46,26 +46,41 @@
     </div>
   </nav>
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-4">
-    <h1 >SEARCH</h1>
-    <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
-    </header>
 
-    <!-- Page Content -->
+  <%# Search bar %>
+
+
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 offset-sm-2">
+    
+        <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: ""} %>   
+        <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+
+        <hr>  
+        
+        </div>
+    </div>
+    </div>
+
+<!-- Page Content -->
     <div>
-            <% @products.each do |product| %>
-            <%= image_tag product.picture if product.picture.attached? %></td>
-            <% end %>
+        <% @products.each do |product| %>
+        <h1> <% product.name %> </h1>
+        <%= image_tag product.picture if product.picture.attached? %></td>
+        <% end %>
     </div>
 
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p class="text-center">Copyright &copy; EyeShopping 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+    <hr> 
+    <footer>
+        <div class="container">
+            <p class="text-center">Copyright &copy; EyeShopping 2019</p>
+        </div>
+<!-- /.container -->
+    </footer>
 
 </body>
