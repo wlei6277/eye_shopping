@@ -31,7 +31,7 @@ class FavouritesController < ApplicationController
     #  -the id of the product which was favourited (where the button resides)  
     
     @favourite = Favourite.new(favourite_params)
-
+    byebug
 
     respond_to do |format|
       if @favourite.save
