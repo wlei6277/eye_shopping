@@ -1,0 +1,5 @@
+<% if current_user.user_follows(current_user: current_user.id, displayed_user: displayed_user_id) %>
+    <%= link_to 'Unfollow', follower_path(@follower) , method: :delete %>
+<% else %>
+    <%= link_to 'Follow', followers_path(follower_id: current_user.id, following_id: displayed_user_id), method: :post %>
+<% end %>

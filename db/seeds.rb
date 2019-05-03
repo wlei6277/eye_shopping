@@ -51,8 +51,8 @@ for i in 1..10
 end
 
 for i in 1...50
-    following = Following.create(follower_id:i, following_id: (50-i))
-    puts "Created #{i} followings"
+    follower = Follower.create(follower_id:i, following_id: (50-i))
+    puts "Created #{i} followers"
 end
 
 for i in 1..50

@@ -13,17 +13,17 @@ class User < ApplicationRecord
   #this takes two named arguments:
   #  > current_user: The id of the user which is logged in
   #  > product: The id of the product being shown
-  #if a query on the Favourite table, using the user and product ids, returns an array greater than 0 then the product has already been favourited  
+  #using the exists? method the function will return true if a favourite can be found for that user and product id and false if not  
   def user_favourites(current_user: , product:)
-    Favourite.where(user_id: current_user, product_id: product).length > 0
+    Favourite.where(user_id: current_user, product_id: product).exists?
   end
   
   #validation method to check if a user is following another user or not
-  #this takes two arguments:
-  #  1. The id of the user which is logged in
-  #  2. The id of the user displayed on the screen
-  #if a query on the Following table, using the logged-in user and displayed user ids, returns an array greater than 0 then the user is already following the displayed user  
-  def user_follows(current_user: , product:)
-    Favourite.where(follower_id: current_user, following_id: displayed_user).length > 0
+  #this takes two named arguments:
+  #  1. current_user: The id of the user which is logged in
+  #  2. displayed_user: The id of the user displayed on the screen
+  #using the exists? method the function will return true if a following can be found for that user and following id and false if not  
+  def user_follows(current_user: , displayed_user:)
+    Follower.where(follower_id: current_user, following_id: displayed_user).exists?
   end
 end
