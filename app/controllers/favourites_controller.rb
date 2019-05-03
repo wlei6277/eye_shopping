@@ -3,21 +3,10 @@ class FavouritesController < ApplicationController
 
   # GET /favourites
   # GET /favourites.json
-  # The index action queries the favourites table to find all 
-  # of the favourites associated with the user which is currently logged in
-  # We then need to loop through these favourites and find all of the products associated with favourite
-  # These products are stored in the @favourited_products instance variable
+  # The index action utilises a join query to pull data for all of the products the user has favourited
+  # and stores this in the @favourited_products instance variable to displayed on the index page
   def index
-    
-    @favourites = Favourite.find_by_user_id(current_user.id)
-    if @favourites.class == "Favourite::ActiveRecord_Relation"
-      @favourited_products = []
-      for favourite in @favourites
-        @favourited_products.push(Product.find(id: favourite.product_id))
-      end
-    else
-      @favourited_products = Product.find(id: @favourite.id)
-    end
+    @favourited_products = Product.joins(:favourites).where(favourites: {user_id: current_user.id})
   end
 
   # GET /favourites/1
