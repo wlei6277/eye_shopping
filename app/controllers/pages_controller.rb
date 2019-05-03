@@ -21,6 +21,7 @@ class PagesController < ApplicationController
     # and stores this in the @favourited_products instance variable to displayed on the index page
     def my_favourites
         @favourited_products = Product.joins(:favourites).where(favourites: {user_id: current_user.id})
+        byebug
     end
 
     def my_followers
