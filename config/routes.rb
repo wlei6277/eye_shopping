@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, path: "/", path_names: {sign_in: "login"}
   get "/", to: "pages#home", as: "root"
-  get "/myboard", to: "pages#myboard", as: "myboard"
-  get "/myaccount", to: "pages#myaccount", as: "myaccount"
+  get "/my-board", to: "pages#my_board", as: "my_board"
+  get "/my-account", to: "pages#my_account", as: "my_account"
+  get "/my-favourites", to: "pages#my_favourites", as: "my_favourites"
+  get "/my-followers", to: "pages#my_followers", as: "my_followers"
+  
   get "/users/:id", to: "users#show", as: "user"
   
   resources :comments
