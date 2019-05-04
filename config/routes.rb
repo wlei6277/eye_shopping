@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: "/", path_names: {sign_in: "login"}
+  devise_for :users, path: "/", path_names: {sign_in: "login", sign_out: "logout"}
   get "/", to: "pages#home", as: "root"
   get "/my-board", to: "pages#my_board", as: "my_board"
   get "/my-account", to: "pages#my_account", as: "my_account"

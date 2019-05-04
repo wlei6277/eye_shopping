@@ -3,10 +3,8 @@ class FavouritesController < ApplicationController
 
   # GET /favourites
   # GET /favourites.json
-  # The index action utilises a join query to pull data for all of the products the user has favourited
-  # and stores this in the @favourited_products instance variable to displayed on the index page
+  
   def index
-    @favourited_products = Product.joins(:favourites).where(favourites: {user_id: current_user.id})
   end
 
   # GET /favourites/1

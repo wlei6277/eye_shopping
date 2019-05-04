@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :products
   has_many :followers, foreign_key: "follower_id" 
   has_many :followings, foreign_key: "following_id"
+  has_one_attached :picture
   
   #validation method to check if a user has favourited a product or not
   #this takes two named arguments:

@@ -23,7 +23,8 @@ for i in 1..50
         name: Faker::Name.name,
         email: Faker::Internet.email,
         password: 'topsecret',
-        password_confirmation: 'topsecret'
+        password_confirmation: 'topsecret',
+        picture: Faker::Avatar.image
     )
     users.push(user)
     puts "Created #{i} users"
@@ -34,7 +35,8 @@ for i in 1..50
         department_id: rand(1..10),
         color: rand(1..5),
         url_link: "www.google.com",
-        description: "empty"
+        description: "empty".
+        picture: Faker::Avatar.image
     )
     users.push(user)
     puts "Created #{i} products"
