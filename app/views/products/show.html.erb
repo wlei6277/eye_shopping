@@ -21,7 +21,7 @@
 
 <p>
   <strong>Department:</strong>
-  <%= @product.department_id %>
+  <%= @product.department.name %>
 </p>
 
 <p>
@@ -79,5 +79,5 @@
 <br>
 <p>
 <%= link_to 'Edit', edit_product_path(@product) %>
-<%= link_to 'Back', myboard_path %>
+<%= link_to 'Back', my_board_path %>
 </p>

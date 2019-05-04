@@ -8,6 +8,16 @@ class PagesController < ApplicationController
           @name = @search["name"]
           @products = Product.where("name ILIKE ?", "%#{@name}%")
         end
+   
+        #CATEGORIZE
+        # @prod = Product.includes(:department).group_by { |product| product.department.id }
+        @categorize = params["categorize"]
+        if @categorize.present?
+            @dep = @categorize["dep"]
+            #@categorize["dep"] will print me out the department.id
+            @products = Product.where(department_id: @dep)
+        end
+
     end
 
     def my_board
@@ -26,8 +36,12 @@ class PagesController < ApplicationController
     def my_followers
     end
 
+  
+
+
     private
         def set_search
             @search = params["search"]
         end
+
 end

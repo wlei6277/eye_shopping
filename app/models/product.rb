@@ -15,4 +15,6 @@ class Product < ApplicationRecord
     Favourite.where(user_id: current_user, product_id: product) > 0
   end
 
+
+
 end
