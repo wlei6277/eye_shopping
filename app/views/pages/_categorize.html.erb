@@ -1,0 +1,16 @@
+
+<%= simple_form_for :categorize, method: "GET", html: { class: 'form-inline' } do |f| %>
+<%= f.input :dep, collection: @departments, label_method: :name, value_method: :id, include_blank: false, selected: :dep %>
+<%= f.submit "Search", class: "btn btn-primary" %> 
+<%end%>
+
+<%# <%= simple_form_for :color, method: "GET", html: { class: 'form-inline' } do |f| %>
+<%# <%= f.input :color,collection:@colors, label_method: name,value_method: Product.colors.keys, item_label_class: 'my-custom-class' %>
+<%# <%end%> 
+
+<%# <% @colors.each do |option| 
+ <tbody>
+ <tr>
+  <td>  <%= form.radio_button :color, option  </td>
+  <td><%= form.label "color_#{option}".to_sym, option %>
+

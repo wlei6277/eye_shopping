@@ -15,25 +15,17 @@
 
 <%# Search bar %>
     <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-8 offset-sm-2">
-    
         <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
         <%= f.input :name, input_html: {value: ""} %>   
         <%= f.submit "Search", class: "btn btn-primary" %>
         <% end %>
-        <hr>  
-        
-        </div>
-    </div>
+        <hr>   
     </div>
 
-<%# Categorize %>
-  <%=select_tag(:color, options_for_select(@colors))%>
-
-
-
-
+<!-- Partial Categorize -->
+    <div class="container">
+    <%= render 'categorize' %>
+    </div>
 <!-- Page Content -->
     <div>
       <% @products.each do |product| %>
@@ -54,3 +46,4 @@
     </footer>
 
 </body>
+</html>
