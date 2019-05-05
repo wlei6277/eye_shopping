@@ -23,9 +23,13 @@ for i in 1..50
         name: Faker::Name.name,
         email: Faker::Internet.email,
         password: 'topsecret',
-        password_confirmation: 'topsecret',
-        picture: Faker::Avatar.image
+        password_confirmation: 'topsecret'
     )
+    
+    user.picture.attach(io: File.open(
+        Rails.root.join('app', 'assets', 'images', 'blank-profile-picture.png')),
+        filename: 'blank-profile-picture.png', content_type: 'image/png'
+        )
     users.push(user)
     puts "Created #{i} users"
     product = Product.create(
@@ -35,10 +39,13 @@ for i in 1..50
         department_id: rand(1..10),
         color: rand(1..5),
         url_link: "www.google.com",
-        description: "empty".
-        picture: Faker::Avatar.image
+        description: "empty"
     )
-    users.push(user)
+    product.picture.attach(io: File.open(
+        Rails.root.join('app', 'assets', 'images', 'no-product-picture.png')),
+        filename: 'no-product-picture.png', content_type: 'image/png'
+        )
+    products.push(user)
     puts "Created #{i} products"
 end
 
