@@ -29,7 +29,9 @@
 <!-- Page Content -->
     <div>
       <% @products.each do |product| %>
-      <h1><%= image_tag product.picture if product.picture.attached? %></h1>
+        <%= link_to product_path(product) do %>
+          <% image_tag (product.picture) %>
+        <% end %>
       <% end %>
     </div>
 
