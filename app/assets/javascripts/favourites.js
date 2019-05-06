@@ -1,0 +1,3 @@
+function changeFavourite(productId, favourite) {
+    
+}

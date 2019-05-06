@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     def home
         @departments = Department.all
         @colors = Product.colors.keys
-        @products = Product.all
+        @products = Product.with_attached_picture.all.includes(:favourites)
         if @search.present?
           @name = @search["name"]
           @products = Product.where("name ILIKE ?", "%#{@name}%")
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
     # The my_favourites action utilises a join query to pull data for all of the products the user has favourited
     # and stores this in the @favourited_products instance variable to displayed on the index page
     def my_favourites
-        @favourited_products = Product.joins(:favourites).where(favourites: {user_id: current_user.id})
+        @favourites = Favourite.where(user_id: current_user.id).includes(:product)
     end
 
     def my_followers

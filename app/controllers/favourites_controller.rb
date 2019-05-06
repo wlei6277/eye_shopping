@@ -32,6 +32,7 @@ class FavouritesController < ApplicationController
     
     @favourite = Favourite.new(favourite_params)
     @favourite.save
+    redirect_to request.referrer
 
   end
 
@@ -55,6 +56,7 @@ class FavouritesController < ApplicationController
   
   def destroy
     @favourite.destroy
+    redirect_to request.referrer
   end
 
   private
