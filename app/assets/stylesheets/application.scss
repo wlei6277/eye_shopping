@@ -3,12 +3,8 @@
 @import "bootstrap";
 // Variables
 @import "navigation";
+@import "show";
 @import "products";
+@import "pages";
+@import "form"
 
-form{
-background-color:rgb(198, 204, 194);
-font-size:10px}
-
-abbr[title="required"] {
-    display: none;
-  }
