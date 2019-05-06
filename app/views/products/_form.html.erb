@@ -40,7 +40,7 @@
  <% @colors.each do |option| %>
  <tbody>
  <tr>
-  <td>  <%= form.radio_button :color, option %> </td>
+  <td><%= form.radio_button :color, option %> </td>
   <td><%= form.label "color_#{option}".to_sym, option %></td>
   </tr>
   </tbody>

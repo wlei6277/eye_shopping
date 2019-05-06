@@ -1,16 +1,20 @@
 
-<%= simple_form_for :categorize, method: "GET", html: { class: 'form-inline' } do |f| %>
-<%= f.input :dep, collection: @departments, label_method: :name, value_method: :id, include_blank: false, selected: :dep %>
-<%= f.submit "Search", class: "btn btn-primary" %> 
-<%end%>
-
-<%# <%= simple_form_for :color, method: "GET", html: { class: 'form-inline' } do |f| %>
-<%# <%= f.input :color,collection:@colors, label_method: name,value_method: Product.colors.keys, item_label_class: 'my-custom-class' %>
-<%# <%end%> 
-
-<%# <% @colors.each do |option| 
- <tbody>
+ <div class="form-group">
+    <div class="col-md-4">
+  
+    <tbody>
  <tr>
-  <td>  <%= form.radio_button :color, option  </td>
-  <td><%= form.label "color_#{option}".to_sym, option %>
+<td><%= simple_form_for :categorize,url: root_path, method: "GET", input_html: { multiple: true }, html: { class: 'form-inline' } do |f| %></td>
+<td><%= f.input :bottom_price, collection: 1..@max_price, selected: @bottom_price %> </td>
+<td><%= f.input :top_price, collection: 1..@max_price, selected: @top_price %> </td>
+
+<td><%= f.input :color, collection: @colors, wrapper: :custom_collection_inline, selected: @color %> </td>
+<td><%= f.input :dep, collection: @departments, label_method: :name, value_method: :id, include_blank: false, selected: @dep %> </td>
+<td><%= f.submit "Search", class: "btn btn-primary" %>  </td>
+
+ <%end%>
+ </tr>
+ </tbody>
+ </div>
+</div>
 
