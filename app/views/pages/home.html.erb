@@ -12,26 +12,37 @@
 </head>
 
 <body>
-
+<header class="jumbotron my-4">
 <%# Search bar %>
     <div class="container">
         <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
         <%= f.input :name, input_html: {value: ""} %>   
+      
         <%= f.submit "Search", class: "btn btn-primary" %>
+        </h1>
         <% end %>
         <hr>   
     </div>
+</header>
+
 
 <!-- Partial Categorize -->
     <div class="container">
+      <div class="searchform">
     <%= render 'categorize' %>
     </div>
+    </div>
 <!-- Page Content -->
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+   
       <% @products.each do |product| %>
       <h1><%= image_tag product.picture if product.picture.attached? %></h1>
       <% end %>
     </div>
+  </div>
+</div>
 
 
 <!-- Footer -->
