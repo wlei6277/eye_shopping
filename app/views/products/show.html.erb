@@ -39,7 +39,7 @@
   <%= @product.description %>
 </p>
 
-<%= render "general/favourite", id: @product.id %>
+<%= render "general/favourite", product: @product %>
 
 <h1>Comments</h1>
 
@@ -79,5 +79,5 @@
 <br>
 <p>
 <%= link_to 'Edit', edit_product_path(@product) %>
-<%= link_to 'Back', my_board_path %>
+<%= link_to 'Your product board', my_board_path %>
 </p>

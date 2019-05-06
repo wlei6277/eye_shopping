@@ -38,7 +38,12 @@
     <div class="col-sm">
    
       <% @products.each do |product| %>
-      <h1><%= image_tag product.picture if product.picture.attached? %></h1>
+        <%= link_to product_path(product) do %>
+          <% image_tag (product.picture) %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= render "general/favourite", product: product %>
+        <% end %>
       <% end %>
     </div>
   </div>
