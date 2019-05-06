@@ -32,7 +32,9 @@
         <%= link_to product_path(product) do %>
           <% image_tag (product.picture) %>
         <% end %>
-        <%= render "general/favourite", product: product %>
+        <% if user_signed_in? %>
+          <%= render "general/favourite", product: product %>
+        <% end %>
       <% end %>
     </div>
 
