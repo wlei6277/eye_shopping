@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         @products = Product.with_attached_picture.all.includes(:favourites)
         if @search.present?
           @name = @search["name"]
-          @products = Product.where("name ILIKE ?", "%#{@name}%")
+          @products = Product.where("name ILIKE ?", "%#{@name}%").with_attached_picture.all.includes(:favourites)
         end
    
         #CATEGORIZE
