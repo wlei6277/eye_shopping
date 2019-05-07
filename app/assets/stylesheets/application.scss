@@ -1,12 +1,10 @@
 // Bootstrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 // Variables
 @import "navigation";
-
-img{    
-    width: 200px;
-    height: 200px;
-}
+@import "show";
+@import "products";
+@import "pages";
+@import "form"
 

@@ -13,21 +13,19 @@
 
 <body>
 
-<%# Search bar %>
-    <div class="container">
-        <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :name, input_html: {value: ""} %>   
-        <%= f.submit "Search", class: "btn btn-primary" %>
-        <% end %>
-        <hr>   
-    </div>
+  <!-- Partial Search-bar -->
+  <!-- Partial Categorize -->
+  <div class="container">
+  <%= render 'searchbar' %>
+  <%= render 'categorize' %>
+  </div>
 
-<!-- Partial Categorize -->
-    <div class="container">
-    <%= render 'categorize' %>
-    </div>
+
 <!-- Page Content -->
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+   
       <% @products.each do |product| %>
         <%= link_to product_path(product) do %>
           <% image_tag (product.picture) %>
@@ -37,16 +35,11 @@
         <% end %>
       <% end %>
     </div>
+  </div>
+</div>
 
 
-<!-- Footer -->
-    <hr> 
-    <footer>
-        <div class="container">
-            <p class="text-center">Copyright &copy; EyeShopping 2019</p>
-        </div>
-<!-- /.container -->
-    </footer>
+
 
 </body>
 </html>

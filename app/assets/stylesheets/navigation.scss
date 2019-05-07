@@ -1,6 +1,4 @@
 
-
-
 // NAVIGATION BAR
 @media screen and (prefers-reduced-motion: reduce) {
     .custom-control-label::before,
@@ -179,6 +177,8 @@
     flex-grow: 1;
     -ms-flex-align: center;
     align-items: center;
+    margin-right: 15px;
+    margin-left: 15px;
   }
   
   .navbar-toggler {
@@ -212,7 +212,7 @@
     .navbar-expand-sm > .container,
     .navbar-expand-sm > .container-fluid {
       padding-right: 0;
-      padding-left: 0;
+      padding-left: 10px;
     }
   }
   

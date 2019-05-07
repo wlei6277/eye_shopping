@@ -1,0 +1,20 @@
+
+//@MEDIA
+
+  @media (min-width: 576px) {
+    .jumbotron {
+      padding: 4rem 2rem;
+    }
+  }
+  
+  .jumbotron-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+  }
+
+  .alert {
+   padding: 0; 
+  margin-bottom: 0; 
+    
+  }
