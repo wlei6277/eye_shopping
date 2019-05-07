@@ -3,18 +3,18 @@ module ApplicationHelper
         product.favourites.find_by_user_id(current_user.id)
     end
 
-    #get_top_products_for_followed_user is a helper method for the my_following view
-    #The method queries the products table to get the first number of products for the user
-    #specified by (the followed_user:) named argument up until the amount of products to displayed given by the (threshold:) named argument  
-    def get_top_products_for_followed_user(followed_user:, threshold: )
-        top_products = []
-        followed_user.products.each_with_index do |product, i|
-            top_products.push(product)
-            if i == threshold - 1
+    #select_products is a helper method to get the first x number of products for a given user profile
+    #The method queries the products table to get the first number of products for the user profile
+    #specified by the (user_profile:) named argument up until the amount of products to displayed given by the (num_of_products:) named argument  
+    def select_products(user_profile:, num_of_products: )
+        product_row = []
+        user_profile.products.each_with_index do |product, i|
+            product_row.push(product)
+            if i == num_of_products - 1
                 break
             end
         end
-        top_products
+        product_row
     end
             
 end

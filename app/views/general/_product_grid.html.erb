@@ -1,0 +1,13 @@
+<div class="product_grid">
+    <% for product in products %>
+        <%= if user_signed_in? %>
+            <div class="product_container">
+                <%= link_to image_tag(product.picture), product_path(product) %>
+                <%= render "general/favourite", product: product %>
+            </div>
+        <% else %>
+            <div class="product_container">
+                <%= link_to image_tag(product.picture), product_path(product) %>
+            </div>
+    <% end %>
+</div>

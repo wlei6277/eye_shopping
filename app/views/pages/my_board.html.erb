@@ -1,4 +1,9 @@
+<%= image_tag current_user.picture %>
+<h2><%= current_user.picture %></h2>
+<h3>Follower# <%= @followers_count %></h3>
+<!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
 
+<%= link_to 'Add Product', new_product_path %>
 
 <!-- Page Content -->
 <div class="container">
@@ -13,8 +18,8 @@
 
   <!-- CTA -->
   <a>
-  <%= link_to 'New Product', new_product_path %>
-  <%= link_to 'Back', root_path %>
+  
+  <%= link_to 'Home', root_path %>
   </a>
  
 </div>

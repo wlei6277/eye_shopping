@@ -27,7 +27,14 @@ class PagesController < ApplicationController
     end
 
     def my_board
-        @products = Product.all
+        
+        #@followers_count passes the count of users who are currently following the logged in user
+        @followers_count = Follower.where(following_id:current_user.id).count
+        
+        #@my_products fetches all of the products which the user has created
+        #The query includes the with_attached_picture so that all of the attached pictures a preloaded before being displayed in the view
+        @products = Product.where(user_id:current_user.id).with_attached_picture.all
+
     end
 
     def my_account
@@ -35,19 +42,17 @@ class PagesController < ApplicationController
     
     # The my_favourites action finds all of records associated with the user current logged in
     # An includes method is chained on to this method to preload the product associated with each favourite
-    
     def my_favourites
         @favourites = Favourite.where(user_id: current_user.id).includes(:product)
     end
 
-    # The my_followings makes the following data available to the view:
-    #  > @followings: all the users who the currently follows - this uses a joins query on the user table finding all the records where the follower id is the current user
-    # SOMETHING ABOUT WITH ATTACHED PICTURE ENABLES PRELOADING _____ IF THIS ACTUALLY WORKS
-    # COMMENTED OUT QUERY DOES NOT WORK.... WHY??????
-    # NEED TO WRITE SOMETHING ABOUT THE BOTTOM QUERY THEN
     def my_followings
-        # @followings = User.joins(:followers).where(followers: {follower_id: current_user.id}).with_attached_picture.all
-        @followings = Follower.where(follower_id: current_user.id).includes(:following)
+
+        #@following_profiles uses the has_many following_profiles association in the User model to fetch all of the User records the logged in user has followed
+        #The follow_profiles association fetches the profiles through the followers tabel using the the following_id (i.e. the foreign key representing the id of each followed User) as a source
+        #The with_attached_picture enables preloading of the follower_profile pictures improving load performance of the page
+        #The includes(:pictures) ensures that the product images associated with the followed user profile are eager loaded into the page also supporting performance
+        @following_profiles = current_user.following_profiles.with_attached_picture.all.includes(:products)
     end
 
   

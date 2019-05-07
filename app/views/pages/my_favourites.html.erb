@@ -1,11 +1,3 @@
-<p id="notice"><%= notice %></p>
-<h1><%= image_tag current_user.picture if current_user.picture.attached? %></h1>
-
-<h1><%= current_user.name %></h1>
-
-<% @favourites.each do |favourite| %>
-  <%= link_to product_path(favourite.product) do %>
-    <% image_tag (favourite.product.picture) %>
-  <% end %>
-  <%= render "general/favourite", product: favourite.product %>
-<% end %>
+<h1>Favourites</h1>
+<%= render "general/profile_container", user: current_user %>
+<%= render "general/product_grid", products: @favourited_products %>
