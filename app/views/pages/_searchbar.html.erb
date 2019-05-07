@@ -2,8 +2,9 @@
     <div class="col-md-6,">
         <div class="searchbox">
         <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :name,label:false, input_html: {value: ""},placeholder:"Search(e.g. 'Speaker')" %>   
         </div>
+        <%= f.input :name,label:false, input_html: {value: ""},placeholder:"Search(e.g. 'Speaker')" %>   
+        
         <div class="search_button">
         <%= f.submit "Search", class: "btn btn-primary" %>
         </div>
