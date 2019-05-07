@@ -10,7 +10,7 @@
         <div class="product_container">
           <%= link_to image_tag(product.picture), product_path(product) %>
           <%= render "general/favourite", product: product %>
-          <%= link_to '', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
+          <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
         </div>
     <% end %>
 </div>

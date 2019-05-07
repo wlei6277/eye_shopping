@@ -6,6 +6,18 @@
     padding: 3vw
 }
 
+.my_board_grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw;
+
+    .glyphicon-remove{
+        color: black;
+        left: 165px;
+    }
+}
 .product_container{
 
         display: flex;
