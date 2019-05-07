@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   post "/payments", to: "payments#stripe"
   get "/payments/success", to: "payments#success"
+  post "/products/:id", to: "products#link_click", as: "link_click"
   
   get "/users/:id", to: "users#show", as: "user"
   
