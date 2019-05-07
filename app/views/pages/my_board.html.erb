@@ -1,31 +1,16 @@
-<%= image_tag current_user.picture %>
-<h2><%= current_user.picture %></h2>
-<h3>Follower# <%= @followers_count %></h3>
+<%= render "general/profile_container", user: current_user %>
+<h3>Followers# <%= @followers_count %></h3>
 <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
 
-<%= link_to 'Add Product', new_product_path %>
+<%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
 
-<!-- Page Content -->
-<div class="container">
-            <% @products.each do |product| %>
-            <%= image_tag product.picture if product.picture.attached? %></td>
-            <% end %>
-        
-  <a class="nav-link"  ></a>
-    <td><%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-  <hr>
-
-  <!-- CTA -->
-  <a>
-  
-  <%= link_to 'Home', root_path %>
-  </a>
- 
+<div class="my_board_grid">
+    <% for product in @my_products %>
+        <div class="product_container">
+          <%= link_to image_tag(product.picture), product_path(product) %>
+          <%= render "general/favourite", product: product %>
+          <%= link_to '', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
+        </div>
+    <% end %>
 </div>
-
-<!-- Footer -->
-    <hr> 
-    <footer>
-        
-<!-- /.container -->
