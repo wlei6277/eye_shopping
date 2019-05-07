@@ -14,6 +14,8 @@
   <strong>Body:</strong>
   <%= @comment.body %>
 </p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', products_path %>
+<% if user_signed_in? and (@comment.user_id == current_user.id) %>
+  <%= link_to 'Edit', edit_comment_path(@comment) %>
+  <%= link_to 'Delete', comment_path(@comment) %>
+<% end %>
+<%= link_to 'Back', product_path(@product) %>

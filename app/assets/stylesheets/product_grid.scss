@@ -13,15 +13,22 @@
     width: 100%;
     padding: 3vw;
 
-    .glyphicon-remove{
+    
+    .glyphicon.glyphicon-remove {
         color: black;
         left: 165px;
-    }
+        }
 }
+
 .product_container{
 
         display: flex;
         position: relative;
+        .glyphicon {
+            position: absolute;
+            top: 20px;
+            left: 19px;
+        }
 
 }
 .product_image{
@@ -30,9 +37,6 @@
 
    
 .glyphicon {
-    position: absolute;
-    top: 20px;
-    left: 19px;
     font-family: "Glyphicons Halflings";
     font-style: normal;
     font-weight: 400;
