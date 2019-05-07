@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-    #before_action :set_search, only: [:home]
+    before_action :set_search, only: [:home]
+    #before_action :set_search, only: [:home]  
     #before_action :search_params, only: [:home]
     def home
         @departments = Department.all
@@ -23,22 +24,6 @@ class PagesController < ApplicationController
              @products = Product.where(department_id: @dep, color:@color, price:@bottom_price..@top_price)
          end
 
-          
-        # if @categorize.present?
-        #     @dep = @categorize["dep"]
-        #     @color = @categorize["color"]
-           
-        #     #@categorize["dep"] will print me out the department.id
-        #     @products = Product.includes(:dep => { color: "color"})
-        #     # @prod = Product.includes(:department).group_by { |product| product.department.id }
-
-
-# Author.joins(:dep).where(dep: {color: “color”})
-#             #gem "squeel"
-        # end
-
-
-
     end
 
     def my_board
@@ -48,13 +33,21 @@ class PagesController < ApplicationController
     def my_account
     end
     
-    # The my_favourites action utilises a join query to pull data for all of the products the user has favourited
-    # and stores this in the @favourited_products instance variable to displayed on the index page
+    # The my_favourites action finds all of records associated with the user current logged in
+    # An includes method is chained on to this method to preload the product associated with each favourite
+    
     def my_favourites
         @favourites = Favourite.where(user_id: current_user.id).includes(:product)
     end
 
-    def my_followers
+    # The my_followings makes the following data available to the view:
+    #  > @followings: all the users who the currently follows - this uses a joins query on the user table finding all the records where the follower id is the current user
+    # SOMETHING ABOUT WITH ATTACHED PICTURE ENABLES PRELOADING _____ IF THIS ACTUALLY WORKS
+    # COMMENTED OUT QUERY DOES NOT WORK.... WHY??????
+    # NEED TO WRITE SOMETHING ABOUT THE BOTTOM QUERY THEN
+    def my_followings
+        # @followings = User.joins(:followers).where(followers: {follower_id: current_user.id}).with_attached_picture.all
+        @followings = Follower.where(follower_id: current_user.id).includes(:following)
     end
 
   
@@ -65,7 +58,4 @@ class PagesController < ApplicationController
             @search = params["search"]
         end
 
-        def search_params
-            params.require(:categorize).permit(:color,:dep,:price).to_h if params[:categorize]
-        end
 end

@@ -1,0 +1,11 @@
+<h1>Followings</h1>
+<% for follower in @followings %>
+    <%= link_to image_tag(follower.following.picture), user_path(follower.following) %>
+    <span><%= follower.following.name %></span>
+    <% for product in get_top_products_for_followed_user(followed_user: follower.following, threshold: 3) %>
+        <div class="following_card">
+            <%= link_to image_tag(product.picture), product_path(product) %>
+            <%= render "general/favourite", product: product %>
+        </div>
+    <% end %>
+<% end %>

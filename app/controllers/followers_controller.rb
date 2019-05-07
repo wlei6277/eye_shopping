@@ -35,6 +35,7 @@ class FollowersController < ApplicationController
     #  -the id of the product which was favourited (where the button resides)
     @follower = Follower.new(follower_params)
     @follower.save
+    redirect_to request.referrer
   end
 
   # PATCH/PUT /followings/1
@@ -58,6 +59,7 @@ class FollowersController < ApplicationController
   # @follower is derived through the set_follower before action - locates the follower using the ids of the logged in user and the displayed user
   def destroy
     @follower.destroy
+    redirect_to request.referrer
   end
 
   private
