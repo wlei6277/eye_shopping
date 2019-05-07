@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/my-board", to: "pages#my_board", as: "my_board"
   get "/my-account", to: "pages#my_account", as: "my_account"
   get "/my-favourites", to: "pages#my_favourites", as: "my_favourites"
-  get "/my-followers", to: "pages#my_followers", as: "my_followers"
+  get "/my-followings", to: "pages#my_followings", as: "my_followings"
   
   get "/users/:id", to: "users#show", as: "user"
   
