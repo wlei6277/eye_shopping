@@ -6,22 +6,27 @@ class ProductsController < ApplicationController
  before_action :set_product, only: [:show, :edit, :update, :destroy]
   # GET /products
   # GET /products.json
+  #DELETE THIS BEFORE SUBMISSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   def index
     @products = Product.all
-    
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    
+    #@commments queries the comments table to fetch all of the comments associated with shown product 
     @comments  = Comment.where(product_id: @product.id)
+
+    #@product_owner fetches the User record which originally created the product
+    @product_owner = User.find(@product.user_id)
   end
 
   # GET /products/new
   def new
+    #@departments holds all of the departments to select as options when creating a new product
     @product = Product.new
     @departments = Department.all
-    
   end
 
   # GET /products/1/edit
@@ -31,7 +36,6 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    byebug
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -66,7 +70,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to my_board_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -79,7 +83,9 @@ class ProductsController < ApplicationController
 
     #set_favorite makes the favourite of a given product available to the view and helper functions
     def set_favourite
-      @favourite = Favourite.where(user_id: current_user.id, product_id: set_product()).first
+      if user_signed_in?
+        @favourite = Favourite.where(user_id: current_user.id, product_id: set_product()).first
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
