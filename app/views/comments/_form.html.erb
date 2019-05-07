@@ -11,15 +11,14 @@
     </div>
   <% end %>
 
+<div class="user_id_comment">
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
    <div class="field">
    <%=@product.name%>
    <%= form.hidden_field :product_id, value: @product.id  %>
    </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="field">
     <%= form.label :body %>

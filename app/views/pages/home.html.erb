@@ -18,28 +18,21 @@
   <div class="container">
   <%= render 'searchbar' %>
   <%= render 'categorize' %>
-  </div>
+ 
 
+  <!-- Page Content -->
 
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-   
-      <% @products.each do |product| %>
-        <%= link_to product_path(product) do %>
-          <% image_tag (product.picture) %>
+    <div class="post-show row">
+        <% @products.each do |product| %>
+          <%= link_to product_path(product) do %>
+            <% image_tag (product.picture), class:"main-image" %>
+          <% end %>
+          <% if user_signed_in? %>
+            <%= render "general/favourite", product: product %>
+          <% end %>
         <% end %>
-        <% if user_signed_in? %>
-          <%= render "general/favourite", product: product %>
-        <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-</div>
-
-
-
-
+  
 </body>
 </html>
