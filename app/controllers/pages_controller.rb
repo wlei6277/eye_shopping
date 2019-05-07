@@ -27,23 +27,23 @@ class PagesController < ApplicationController
     end
 
     def my_board
-        
         #@followers_count passes the count of users who are currently following the logged in user
         @followers_count = Follower.where(following_id:current_user.id).count
         
         #@my_products fetches all of the products which the user has created
         #The query includes the with_attached_picture so that all of the attached pictures a preloaded before being displayed in the view
-        @products = Product.where(user_id:current_user.id).with_attached_picture.all
+        @my_products = Product.where(user_id:current_user.id).with_attached_picture.all
 
     end
 
     def my_account
     end
     
-    # The my_favourites action finds all of records associated with the user current logged in
-    # An includes method is chained on to this method to preload the product associated with each favourite
     def my_favourites
-        @favourites = Favourite.where(user_id: current_user.id).includes(:product)
+        #@favourited_products uses the has_many favourited_products association in the User model to fetch all of the Product records the logged in user has favourited
+        #The favourited_products association fetches the Product through the Favourites table using the user_id as a source
+        #The with_attached_picture enables preloading of the follower_profile pictures improving load performance of the page
+        @favourited_products = current_user.favourited_products.with_attached_picture.all.includes(:favourites)
     end
 
     def my_followings
