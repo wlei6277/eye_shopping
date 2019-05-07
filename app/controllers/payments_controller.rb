@@ -1,5 +1,18 @@
 class PaymentsController < ApplicationController
     skip_before_action :verify_authenticity_token
+    def link_click
+        byebug
+        #This method is called when someone clicks on the "buy this item" link
+        #The method should increment the user who created the products link_click_revenue by $0.1  
+        #and redirect the person who clicked the link to url of the given product
+        @product = Product.find(params[:id])
+        @product_creator = User.find(@product.user_id)
+        @product_creator.link_click_revenue += 0.1
+        @product_creator.link_clicks += 1
+        @product_creator.save
+        redirect_to @product.url 
+    end
+    
     def stripe
         user_id = params[:data][:object][:client_reference_id]
         payment_id = params[:data][:object][:payment_intent]
@@ -27,9 +40,9 @@ class PaymentsController < ApplicationController
                 cancel_url: 'http://localhost:3000/cancel'
             )
             @stripe_session_id = stripe_session.id
-        end
     end
 
     def success
     end
+        
 end

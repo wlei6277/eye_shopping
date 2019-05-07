@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
  before_action :set_favourite, only: [:show, :edit, :update, :destroy]
  before_action :color_enum, only: [:new, :edit, :create]
  before_action :department_list, only: [:new, :edit, :create]
- before_action :set_product, only: [:show, :edit, :update, :destroy]
+ before_action :set_product, only: [:show, :edit, :update, :destroy, :link_click]
   # GET /products
   # GET /products.json
   #DELETE THIS BEFORE SUBMISSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -73,6 +73,34 @@ class ProductsController < ApplicationController
       format.html { redirect_to my_board_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def link_click
+    
+    #This method is called when someone clicks on the "buy this item" link
+    #The method should increment the user who created the products link_click_revenue by 1 ($0.1)  
+    #and redirect the person who clicked the link to url of the given product
+    @product_creator = User.find(@product.user_id)
+    if user_signed_in? 
+      unless (@product_creator.id != current_user.id)
+        if !@product_creator.link_click_total 
+          @product_creator.link_click_total = 1
+          @product_creator.link_click_revenue = 1
+        else
+          @product_creator.link_click_total += 1
+          @product_creator.link_click_revenue += 1
+        end
+      end
+    elsif !@product_creator.link_click_total 
+      @product_creator.link_click_total = 1
+      @product_creator.link_click_revenue = 1
+    else
+      @product_creator.link_click_total += 1
+      @product_creator.link_click_revenue += 1
+    end
+
+    @product_creator.save
+    redirect_to "http://#{@product.url_link}" 
   end
 
   private
