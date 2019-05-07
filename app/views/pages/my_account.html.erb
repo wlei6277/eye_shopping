@@ -1,0 +1,28 @@
+<div class="my_profile_container">
+    <h1><%= @current_user.name %></h1>
+    <%= image_tag (@current_user.picture) %>
+    <h2><%= @current_user.email %> </h2>
+</div>
+<%= link_to "Edit account information", edit_user_registration_path(@current_user) %>
+<div class="account_section">
+    <div class="button">
+        <%= link_to  "MY BOARD", my_board_path %>
+    </div>
+    <%= render  "general/product_grid", products: select_items(collection: @my_products, num_of_items: @displayed_items_count) %>
+</div>
+<div class="account_section">
+    <div class="button">
+        <%= link_to  "MY FOLLOWINGS", my_followings_path %>
+    </div>
+    <div class="followers_container">
+        <% for user_profile in select_items(collection: @following_profiles, num_of_items: @displayed_items_count) %>
+            <%= render "general/profile_container", user: user_profile %>
+        <% end %>
+    </div>
+</div>
+<div class="account_section">
+    <div class="button">
+        <%= link_to  "MY FAVOURITES", my_favourites_path %>
+    </div>
+    <%= render  "general/product_grid", products: select_items(collection: @favourited_products, num_of_items: @displayed_items_count) %>
+</div>
