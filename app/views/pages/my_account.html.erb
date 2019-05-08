@@ -16,7 +16,10 @@
     </div>
     <div class="followers_container">
         <% for user_profile in select_items(collection: @following_profiles, num_of_items: @displayed_items_count) %>
-            <%= render "general/profile_container", user: user_profile %>
+            <div class="profile_container">
+                <%= link_to image_tag(user_profile.picture), user_path(user_profile) %>
+                <h2><%= user_profile.name %></h2>
+            </div>
         <% end %>
     </div>
 </div>
