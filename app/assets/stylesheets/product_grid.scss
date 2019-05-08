@@ -1,41 +1,26 @@
 .product_grid{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-    padding: 3vw
-}
+    justify-content: space-between;
 
-.my_board_grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    padding: 3vw;
 
     
-    .glyphicon.glyphicon-remove {
-        color: black;
-        left: 165px;
-        }
+
 }
 
 .product_container{
-
-        display: flex;
+       
         position: relative;
-        .glyphicon {
-            position: absolute;
-            top: 20px;
-            left: 19px;
-        }
+
+        
 
 }
 .product_image{
     margin:10px;
 }
 
-   
 .glyphicon {
     font-family: "Glyphicons Halflings";
     font-style: normal;
@@ -43,4 +28,6 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     color: #e47878;
+    font-size: 18px;
+
 }
