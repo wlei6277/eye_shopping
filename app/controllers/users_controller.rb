@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       # The set_follower action is required to make the following between the logged in user and displayed user available to the view
       # Therefore allowing a user to unfollow the displayed user 
       def set_follower
-        @follower = Follower.where(follower_id: current_user.id, following_id:set_displayed_user().id).first  
+        @follower = Follower.where(follower_id: current_user.id, following_id:set_displayed_user().id).first
       end
       
 
