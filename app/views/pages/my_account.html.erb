@@ -2,6 +2,16 @@
     <h1><%= @current_user.name %></h1>
     <%= image_tag (@current_user.picture) %>
     <h2><%= @current_user.email %> </h2>
+    <div class="statistics">
+        <p>#Total Donations: <%= current_user.donation_total %></p>
+        <p>Associations:</p>
+        <ul> 
+            <li>#Link-clicks: <%= current_user.link_click_total %></li>
+            <li>#Revenue: <%= current_user.link_click_revenue %></li>
+        </ul>
+    </div>
+
+    
 </div>
 <%= link_to "Edit account information", edit_user_registration_path(@current_user) %>
 <div class="account_section">

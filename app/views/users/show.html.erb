@@ -1,3 +1,7 @@
 <%= render "general/profile_container", user: @displayed_user %>
+<div class="statistics">
+    <p>#Followers: <%= @followers_count %></p>
+    <p>#Dontations: <%= @displayed_user.donation_total %></p>
+</div>
 <%= render "general/follow", displayed_user_id: @displayed_user.id %>
 <%= render "general/product_grid", products: @displayed_user.products %>
