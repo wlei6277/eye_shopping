@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     
     #The show action allows the user to see other users (i.e. the one being displayed) page 
     def show
+      #@followers_count passes the count of users who are currently following the displayed user
+      @followers_count = Follower.where(following_id:@displayed_user.id).count
     end
     
     # GET /users/new
@@ -52,7 +54,7 @@ class UsersController < ApplicationController
       # The set_follower action is required to make the following between the logged in user and displayed user available to the view
       # Therefore allowing a user to unfollow the displayed user 
       def set_follower
-        @follower = Follower.where(follower_id: current_user.id, following_id:set_displayed_user().id).first  
+        @follower = Follower.where(follower_id: current_user.id, following_id:set_displayed_user().id).first
       end
       
 

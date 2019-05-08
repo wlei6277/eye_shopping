@@ -2,6 +2,6 @@
 <% for profile in @following_profiles%>
     <div class="following_container">
         <%= render "general/profile_container", user: profile %>
-        <%= render "general/product_grid", products: select_products(user_profile: profile, num_of_products: 3) %>
+        <%= render "general/product_grid", products: select_items(collection: profile.products, num_of_items: 3) %>
     </div>
 <% end %>

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get "/my-favourites", to: "pages#my_favourites", as: "my_favourites"
   get "/my-followings", to: "pages#my_followings", as: "my_followings"
   
+  post "/payments", to: "payments#stripe"
+  get "/payments/success", to: "payments#success"
+  post "/products/:id", to: "products#link_click", as: "link_click"
+  
   get "/users/:id", to: "users#show", as: "user"
   
   resources :comments

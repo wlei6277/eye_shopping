@@ -86,6 +86,9 @@ ActiveRecord::Schema.define(version: 2019_05_01_232043) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.integer "donation_total"
+    t.integer "link_click_total"
+    t.integer "link_click_revenue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
