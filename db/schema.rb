@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_232043) do
+ActiveRecord::Schema.define(version: 2019_05_08_035559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2019_05_01_232043) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.bigint "donee_id"
+    t.bigint "donor_id"
+    t.integer "amount"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donee_id"], name: "index_donations_on_donee_id"
+    t.index ["donor_id"], name: "index_donations_on_donor_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -103,6 +114,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_232043) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
+  add_foreign_key "donations", "users", column: "donee_id"
+  add_foreign_key "donations", "users", column: "donor_id"
   add_foreign_key "favourites", "products"
   add_foreign_key "favourites", "users"
   add_foreign_key "followers", "users", column: "follower_id"
