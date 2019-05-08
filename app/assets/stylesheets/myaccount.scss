@@ -1,0 +1,24 @@
+.myaccount_box{
+    display:flex;
+    flex-direction: column;
+}
+.my_profile_container{
+    display:flex;
+    flex-direction: column;
+}
+.myprofile_box{
+    display:flex;
+    flex-direction: row;
+
+}
+.image_myboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.adjusted_grid .wrapper{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
