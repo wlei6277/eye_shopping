@@ -1,16 +1,25 @@
-<%= render "general/profile_container", user: current_user %>
-<h3>Followers# <%= @followers_count %></h3>
-<!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
-
-<%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
 
 
-<div class="my_board_grid">
-    <% for product in @my_products %>
-        <div class="product_container">
-          <%= link_to image_tag(product.picture), product_path(product) %>
-          <%= render "general/favourite", product: product %>
-          <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
+        <div class="container-grid placeholder-hero">
+        <%= render "general/profile_container", user: current_user %>
+        <h1>Followers# <%= @followers_count %></h1>
+        <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
         </div>
-    <% end %>
-</div>
+        <%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
+     <div class="container-grid main" id="product_container">
+      
+    <div class="responsive-picture"><picture>
+      <% for product in @my_products %>
+          <%# <div class="product_container"> %>
+            <%= link_to image_tag(product.picture), product_path(product) %>
+            <%= render "general/favourite", product: product %>
+            <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
+      <% end %>
+      </picture></div>
+          <%# </div> %>
+    
+    </div>
+  </div>
+</body>
+
+
