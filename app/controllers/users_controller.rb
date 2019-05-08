@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     
     #The show action allows the user to see other users (i.e. the one being displayed) page 
     def show
+      #@followers_count passes the count of users who are currently following the displayed user
+      @followers_count = Follower.where(following_id:@displayed_user.id).count
     end
     
     # GET /users/new
