@@ -1,12 +1,7 @@
-<%= render "general/profile_container", user: @displayed_user %>
-<div class="statistics">
-    <p>#Followers: <%= @followers_count %></p>
-    <p>#Dontations: <%= @displayed_user.donation_total %></p>
-</div>
 <% if user_signed_in? %>
     <div class="donation_form">
-        <h3>Donate to <%= @displayed_user.name%></h3>
-        <%= form_with(url: "/donations", action: :create, method: :post,  local: true) do |form| %>
+        <h1>Donate to <%= @displayed_user.name%></h3>
+        <%= form_with(model: @donation, local: true) do |form| %>
             <%= form.hidden_field :donor_id, value: current_user.id %>
             <%= form.hidden_field :donee_id, value: @displayed_user.id %>
             <div class="field">
@@ -23,6 +18,3 @@
         <% end %>
     </div>
 <% end %>
-
-<%= render "general/follow", displayed_user_id: @displayed_user.id %>
-<%= render "general/product_grid", products: @displayed_user.products %>

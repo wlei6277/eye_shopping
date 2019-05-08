@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :products
   has_many :followers, foreign_key: "follower_id" 
   has_many :followings, foreign_key: "following_id"
+  has_many :donations, foreign_key: "donor_id" 
+  has_many :donors, foreign_key: "donee_id", class_name: "Donation"
   has_one_attached :picture
   has_many :following_profiles, through: :followers, source: :following
   has_many :favourited_products, through: :favourites, source: :product
