@@ -11,13 +11,20 @@
             color: #ecce36;
             left: 166px;
             }
+
+            
+            
 }
 
+.glyphicon-plus-sign{
+           
+    color: #ecce36;
+    font-size: 38px;
+}
 .profile_container{
     flex-direction: column;
     display: flex;
     align-items: center;
-    
 }
 
 .my_board_follower{
@@ -32,11 +39,4 @@
  padding-left: 10px;
 }
 
-.glyphicon-plus-sign{
-    position:absolute;
-    color: #ecce36;
-    top: 723px;
-    left: 758px;
-    font-size: 38px;
-}
 
