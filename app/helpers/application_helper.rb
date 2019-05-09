@@ -16,5 +16,11 @@ module ApplicationHelper
         selection
     end
 
+    #retrive_follower_record enables the user to access the follow / unfollow button
+    #this has query has been made here instead of in the controller to enable site visitors to see a users profile without logging in
+    #This method takes the user currently displayed in the view as an argument
+    def retrieve_follower_record(displayed_user_id:)
+        @follower = Follower.where(follower_id: current_user.id, following_id:displayed_user_id).first
+    end
             
 end
