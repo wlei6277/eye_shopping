@@ -5,9 +5,14 @@ class PagesController < ApplicationController
     before_action :set_my_products, only: [:my_board, :my_account]
     
     def home
+
+        #Get all of the products from the database, ordered by date most recently updated
+        #Favourites has been included into this query for eager loading
+        @products = Product.with_attached_picture.all.includes(:favourites).order(:updated_at).reverse_order
+        
+        #Get all of the departments, colors keys for search functionality
         @departments = Department.all
         @colors = Product.colors.keys
-        @products = Product.with_attached_picture.all.includes(:favourites)
         @max_price = Product.maximum("price")
         
         if @search.present?
@@ -64,7 +69,7 @@ class PagesController < ApplicationController
             #@favourited_products uses the has_many favourited_products association in the User model to fetch all of the Product records the logged in user has favourited
             #The favourited_products association fetches the Product through the Favourites table using the user_id as a source
             #The with_attached_picture enables preloading of the follower_profile pictures improving load performance of the page
-            @favourited_products = current_user.favourited_products.with_attached_picture.all.includes(:favourites)
+            @favourited_products = current_user.favourited_products.with_attached_picture.all.includes(:favourites).reverse_order
         end
         def set_followed_user_profiles
             #@following_profiles uses the has_many following_profiles association in the User model to fetch all of the User records the logged in user has followed
@@ -76,7 +81,7 @@ class PagesController < ApplicationController
         def set_my_products
             #@my_products fetches all of the products which the user has created
             #The query includes the with_attached_picture so that all of the attached pictures a preloaded before being displayed in the view
-            @my_products = Product.where(user_id:current_user.id).with_attached_picture.all
+            @my_products = Product.where(user_id:current_user.id).with_attached_picture.all.reverse_order
         end
 
 end
