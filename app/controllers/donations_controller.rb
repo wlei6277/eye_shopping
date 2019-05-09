@@ -38,8 +38,9 @@ class DonationsController < ApplicationController
                     donor_id: current_user.id
                 }
             },
-            success_url: 'http://localhost:3000/donations/success',
-            cancel_url: 'http://localhost:3000/donations/cancel'
+            
+            success_url: 'https://eye-shopping.herokuapp.com/donations/success',
+            cancel_url: 'https://eye-shopping.herokuapp.com/donations/cancel'
         )
 
         #@stripe_session_id is used in the javascript tag on the submit view to open
