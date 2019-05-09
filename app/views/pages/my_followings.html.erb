@@ -5,10 +5,12 @@
         <% for profile in @following_profiles%>
         <div class="followings_box">
         <%= render "general/profile_container", user: profile %>
-        <%= render "general/product_grid", products: select_items(collection: profile.products, num_of_items: 3) %>
+        <div class="adjusted_following">
+            <%= render "general/product_grid", products: select_items(collection: profile.products, num_of_items: 3) %>
         </div>
-    <hr>
-    <hr>
+        </div>
+    <hr class="followingline">
+   
        <div>
         <% end %>
      

@@ -7,9 +7,10 @@
       <%= render "general/profile_container", user: current_user %>
       <h1 class="my_board_follower">Followers# <%= @followers_count %></h1>
       <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
+      <div class="plus">
+        <%= link_to '', new_product_path, class: "glyphicon-plus-sign" %>
+      </div>
     </div>
-    <%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
-        
    <div class="wrapper">
         <% for product in @my_products %>
     <div class="product_container">
