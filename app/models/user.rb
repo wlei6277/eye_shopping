@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_initialize :assign_default_values
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -32,4 +34,17 @@ class User < ApplicationRecord
   def user_follows(current_user: , displayed_user:)
     Follower.where(follower_id: current_user, following_id: displayed_user).exists?
   end
+
+  def assign_default_values
+    unless self.picture.attached?
+      p "second statement"
+      self.picture.attach(io: File.open(
+      Rails.root.join('app', 'assets', 'images', 'blank-profile-picture.png')),
+      filename: 'blank-profile-picture.png', content_type: 'image/png'
+      )
+    end
+    self.link_click_total = 0 unless self.link_click_total 
+    self.link_click_revenue = 0 unless self.link_click_revenue
+  end
+
 end

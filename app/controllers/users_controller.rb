@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_follower, only: [:show, :destroy]
+    before_action :set_follower, only: [ :destroy]
     before_action :set_displayed_user, only: [:show, :edit, :update, :destroy]
     # GET /users
     # GET /users.json

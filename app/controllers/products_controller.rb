@@ -84,24 +84,18 @@ class ProductsController < ApplicationController
     #and redirect the person who clicked the link to url of the given product
     
     @product_creator = User.find(@product.user_id)
+    byebug
     if user_signed_in? 
       unless (@product_creator.id == current_user.id)
-        if !@product_creator.link_click_total 
-          @product_creator.link_click_total = 1
-          @product_creator.link_click_revenue = 1
-        else
           @product_creator.link_click_total += 1
           @product_creator.link_click_revenue += 1
-        end
       end
-    elsif !@product_creator.link_click_total 
-      @product_creator.link_click_total = 1
-      @product_creator.link_click_revenue = 1
     else
       @product_creator.link_click_total += 1
       @product_creator.link_click_revenue += 1
     end
-
+    
+    byebug
     @product_creator.save
     redirect_to "http://#{@product.url_link}" 
   end
