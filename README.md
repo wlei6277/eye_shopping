@@ -3,6 +3,7 @@
 
 **2.Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
 
+
 **3.Describe the project will you be conducting and how. your App will address the needs.**
 
 **4.Describe the network infrastructure the App may be based on.**
@@ -118,8 +119,21 @@ The main tools we used is Trello . We have allocated the task for each purpose a
 **Discuss how Agile methodology is being implemented in your project.**
 First we focused on having a clear idea of what we intend to do and the main goal of the app. Instead of planning the whole week, we spent the first two days to finalize the plan and match the database with wireframe-based actions and ERD. We constantly joined in git to test the code.
 
-Provide an overview and description of your Source control process.
-Provide an overview and description of your Testing process.
-Discuss and analyse requirements related to information system security.
-Discuss methods you will use to protect information and data.
-Research what your legal obligations are in relation to handling user data.
+**Provide an overview and description of your Source control process.**
+Git/github was used during this assignment for the process of source controll.
+We found it very useful to track all the codes previously written in repository so we could compare and verify with the recend code. We both worked in different branch and pushed in master.
+
+
+**Provide an overview and description of your Testing process.**
+
+
+
+
+**Discuss and analyse requirements related to information system security.**
+
+Heroku provide SSL certificate with HTTPS so the data is encrypt between server and the user.
+
+**Discuss methods you will use to protect information and data.**
+Devise/Heroku
+
+**Research what your legal obligations are in relation to handling user data.**
