@@ -3,7 +3,7 @@
     <%= image_tag (@current_user.picture) %>
     <h2><%= @current_user.email %> </h2>
     <div class="statistics">
-        <p>#Total Donations: <%= current_user.donation_total %></p>
+        <p>#Total Donations: $<%= @donation_total %></p>
         <p>Associations:</p>
         <ul> 
             <li>#Link-clicks: <%= current_user.link_click_total %></li>

@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     def show
       #@followers_count passes the count of users who are currently following the displayed user
       @followers_count = Follower.where(following_id:@displayed_user.id).count
+      
+      #@donation_total calculates the total amount of donations the displayed user has recieved and passes this to the view 
+      #@donation_total is converted into dollar amounts by dividing by 100 (the amount is stored in the database as cents)  
+      @donation_total = Donation.where(donee_id: @displayed_user.id, confirmed: true).calculate(:sum, :amount)/100
     end
     
     # GET /users/new

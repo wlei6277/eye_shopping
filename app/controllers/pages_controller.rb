@@ -40,6 +40,10 @@ class PagesController < ApplicationController
 
         #displayed_items_count sets the number of each items in each section of the my_account page (i.e. my_board, my_followings, my_favourites)
         @displayed_items_count = 4
+
+        #@donation_total calculates the total amount of donations the logged-in user has recieved and passes this to the view 
+        #@donation_total is converted into dollar amounts by dividing by 100 (the amount is stored in the database as cents)  
+        @donation_total = Donation.where(donee_id: current_user.id, confirmed: true).calculate(:sum, :amount)/100
     end
     
     def my_favourites
