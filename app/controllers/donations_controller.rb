@@ -64,7 +64,7 @@ class DonationsController < ApplicationController
         user_id = params[:data][:object][:client_reference_id]
         payment_id = params[:data][:object][:payment_intent]
         payment = Stripe::PaymentIntent.retrieve(payment_id)
-        @donation = Donation.where(donee_id: payment.metadata.donee_id, donor_id: payment.metadata.donor_id).first
+        @donation = Donation.where(donee_id: payment.metadata.donee_id, donor_id: payment.metadata.donor_id).last
         @donation.confirmed = true
         @donation.save
     end
