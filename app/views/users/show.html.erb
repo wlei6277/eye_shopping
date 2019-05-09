@@ -1,7 +1,7 @@
 <%= render "general/profile_container", user: @displayed_user %>
 <div class="statistics">
     <p>#Followers: <%= @followers_count %></p>
-    <p>#Dontations: <%= @displayed_user.donation_total %></p>
+    <p>#Dontations: $<%= @donation_total %></p>
 </div>
 <% if user_signed_in? %>
     <div class="donation_form">
