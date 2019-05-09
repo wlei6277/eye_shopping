@@ -21,11 +21,7 @@
     color: #ecce36;
     font-size: 38px;
 }
-.profile_container{
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-}
+
 
 .my_board_follower{
    
@@ -43,3 +39,13 @@
 }
 
 
+.profile_container{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.container .following img{
+    width: 200px;
+    height: 200px;
+}
