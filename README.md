@@ -3,24 +3,24 @@
 ## Repo:
 
 ### Description of platform
-- Problem/Purpose
-Problem:But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
+**Problem/Purpose**
+- Problem:But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
 The advantage of the online shopping which is time-saving and having more comparable information is losing its benefits.
-Purpose: 
+- Purpose: 
 We want to create a platform that provides the online tool where users can not only create their own list of products they like ,but can be inspired to share and create interaction even with the list of others. They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
 
-- Functionality/Features
-The Networking Marketplace Platform where the user can publish and share the products available for online purchase.
-The user can create and customize the list of products ( as shopping-cart) and share it with other users.
+**Functionality/Features**
+- The Networking Marketplace Platform where the user can publish and share the products available for online purchase.
+- The user can create and customize the list of products ( as shopping-cart) and share it with other users.
 
 
-- Screenshots
+**Screenshots**
 ![alt text](   )
 ![alt text](   )
 ![alt text](   )
 ![alt text](   )
 
-- Tech Stack
+**Tech Stack**
   - HTML5
   - CSS3
   -  Bootstrap (CSS Framework for styling)
@@ -87,10 +87,11 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
  
  - Wireframes
-  
+<p align="center">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20BOARD.png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FAVOURITES%20.png" width="400">
- 
+</p>
+
  - Database ERD
 
    
