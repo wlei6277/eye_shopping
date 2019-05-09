@@ -21,18 +21,18 @@ The user can create and customize the list of products ( as shopping-cart) and s
 ![alt text](   )
 
 - Tech Stack
-* HTML5
-* CSS3
-* Bootstrap (CSS Framework for styling)
-* CSS GRID
-* Simple Form
-* Ruby on Rails 5.2.1
-* Ruby 2.5.1
-* Visual Studio Code 
-* Trello 
-* Git & Github 
-* Heroku 
-* Google Fonts
+  - HTML5
+  - CSS3
+  -  Bootstrap (CSS Framework for styling)
+  -  CSS GRID
+  - Simple Form
+  - Ruby on Rails 5.2.1
+  - Ruby 2.5.1
+  - Visual Studio Code 
+  - Trello 
+  - Git & Github 
+  - Heroku 
+  - Google Fonts
 
 - Instructions on how to setup, configure and use 
 
@@ -41,9 +41,11 @@ The user can create and customize the list of products ( as shopping-cart) and s
 
 
 - Design Documentation
- - Design Process
+
+  - Design Process
  
- - User stories
+ 
+  - User stories
  Age: 15 (High school)
 Sex: Male
 
@@ -82,10 +84,19 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
 
  - Workflow diagram of the user
+
  
  - Wireframes
+  
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20BOARD.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FAVOURITES%20.png" width="400">
  
  - Database ERD
+
+   
+ - Project plan&Timeline
+ 
+ - Trello
  
  
 
