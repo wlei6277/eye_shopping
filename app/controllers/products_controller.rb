@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+
+
  before_action :set_product, only: [:show, :edit, :update, :destroy]
  before_action :set_favourite, only: [:show, :edit, :update, :destroy]
  before_action :color_enum, only: [:new, :edit, :create]
@@ -131,3 +133,4 @@ class ProductsController < ApplicationController
 
 end
  
+

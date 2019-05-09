@@ -5,11 +5,11 @@
          <div class="panel-heading">Search Your Product</div>
             <div class="panel-body">
 <td><%= simple_form_for :categorize,url: root_path, method: "GET", input_html: { multiple: true }, html: { class: 'form-inline' } do |f| %></td>
-<td><%= f.input :bottom_price,label: "min $", input_html: {value: "100"}, selected: @bottom_price %> </td>
-<td><%= f.input :top_price,label: "max $", input_html: {value: "1000"}, selected: @top_price %> </td>
+<td><%= f.input :bottom_price, collection: 1..@max_price, selected: @bottom_price %> </td> 
+<td><%= f.input :top_price, collection: 1..@max_price, selected: @top_price %> </td> 
 
 <td><%= f.input :color, collection: @colors, selected: @color %> </td>
-<td><%= f.input :department, collection: @departments, label_method: :name, value_method: :id, include_blank: false, selected: @dep %> </td>
+<td><%= f.input :dep, collection: @departments, label_method: :name, value_method: :id, include_blank: false, selected: @dep %> </td>
 <td><%= f.submit "Search", class: "btn btn-primary" %>  </td>
             
  <%end%>
@@ -19,4 +19,12 @@
    </div>
 </div>
 
+<%# 
+<td><%= simple_form_for :categorize,url: root_path, method: "GET", input_html: { multiple: true }, html: { class: 'form-inline' } do |f| %></td>
+<%# <td><%= f.input :bottom_price, collection: 1..@max_price, selected: @bottom_price %> </td> 
+<%# <td><%= f.input :top_price, collection: 1..@max_price, selected: @top_price %> </td> 
+
+
+<%# <td><%= f.input :bottom_price,collection:1..@max_price, label: "min $", input_html: {value: "100"}, selected: @bottom_price %> </td> 
+<%# <td><%= f.input :max_price,collection:1..@max_price, label: "max $", input_html: {value: "1000"}, selected: @top_price %> </td> 
 

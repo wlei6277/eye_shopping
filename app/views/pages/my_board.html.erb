@@ -1,16 +1,27 @@
-<%= render "general/profile_container", user: current_user %>
-<h3>Followers# <%= @followers_count %></h3>
-<!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
 
-<%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
+<div class="container">
+    <div class="row">
 
-
-<div class="my_board_grid">
-    <% for product in @my_products %>
-        <div class="product_container">
+ <div class="my_board_container"> 
+    <div class="my_board_profile">
+      <%= render "general/profile_container", user: current_user %>
+      <h1 class="my_board_follower">Followers# <%= @followers_count %></h1>
+      <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
+    </div>
+    <%= link_to '', new_product_path, class: "glyphicon glyphicon-plus-sign" %>
+        
+   <div class="wrapper">
+        <% for product in @my_products %>
+    <div class="product_container">
           <%= link_to image_tag(product.picture), product_path(product) %>
           <%= render "general/favourite", product: product %>
           <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
-        </div>
-    <% end %>
+      </div>
+        <% end %>
 </div>
+    
+  </div>
+ 
+</div>
+</div>
+
