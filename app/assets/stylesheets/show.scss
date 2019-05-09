@@ -1,3 +1,11 @@
+.statistics{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+
 .product_page{
 display: flex;
 flex-direction:row;
@@ -38,3 +46,14 @@ font-size:12px;
     border-color: #8a6d3b;
     margin: 0 8px 10px 8px;
 }
+
+
+input[type="submit" i] {
+    color: #f5f5f5;
+    background-color: #464444;
+    border-color: #464444;
+    font-weight: 600;
+    border: thick;
+    width: 10vw;
+}
+

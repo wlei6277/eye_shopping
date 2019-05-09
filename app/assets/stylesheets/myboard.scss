@@ -10,9 +10,7 @@
     .glyphicon-remove{
             color: #ecce36;
             left: 166px;
-            }
-
-            
+            } 
             
 }
 
@@ -28,8 +26,15 @@
     margin-bottom: 3vw;
     font-size: 20px;
     color: #e97979;
+    font-weight: 600
 }
+.my_board_donation{
+    margin-bottom: 3vw;
+    font-size: 20px;
+    color: #8a6d3b;
+    font-weight: 600;
 
+}
 .my_board_profile{
     margin-right: 0;
  margin-left: 0;
@@ -37,6 +42,7 @@
  padding-right: 10px;
  padding-left: 10px;
 }
+
 
 
 .profile_container{
@@ -49,3 +55,4 @@
     width: 200px;
     height: 200px;
 }
+

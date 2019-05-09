@@ -1,11 +1,24 @@
+
+
+
 <%= render "general/profile_container", user: @displayed_user %>
-<div class="statistics">
-    <p>#Followers: <%= @followers_count %></p>
-    <p>#Dontations: $<%= @donation_total %></p>
-</div>
+ <%= render "general/follow", displayed_user_id: @displayed_user.id %>
+
+<div class="container">
+  <div class="row">
+  
+        <div class="statistics">
+        <div class="col-sm">
+            <p class="my_board_follower">#Followers: <%= @followers_count %></p>
+        </div>
+        <div class="col-sm">
+            <p class="my_board_donation">#Dontations: $<%= @donation_total %></p>
+            </div>
+        </div>
+ 
 <% if user_signed_in? %>
     <div class="donation_form">
-        <h3>Donate to <%= @displayed_user.name%></h3>
+        <label>Donate to <%= @displayed_user.name%></label>
         <%= form_with(url: "/donations", action: :create, method: :post,  local: true) do |form| %>
             <%= form.hidden_field :donor_id, value: current_user.id %>
             <%= form.hidden_field :donee_id, value: @displayed_user.id %>
@@ -17,12 +30,14 @@
                 <%= form.label :message %>
                 <%= form.text_field :message %>
             </div>
-            <div class="actions">
+            <button type="button" class="btn btn-dark">
                 <%= form.submit %>
-            </div>
+            </button>
         <% end %>
     </div>
-<% end %>
+    <% end %>
 
-<%= render "general/follow", displayed_user_id: @displayed_user.id %>
-<%= render "general/product_grid", products: @displayed_user.products %>
+   
+    <%= render "general/product_grid", products: @displayed_user.products %>
+   </div>
+</div>
