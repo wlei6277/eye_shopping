@@ -38,7 +38,7 @@
       <p>
         <%# <strong>Url link:</strong>
         <%= @product.url_link %> 
-        <button tybuttone="button" class="btn btn-link  btn-lg"><%= link_to'Go to product', link_click_path(@product), method: :post %></button>
+        <button tybuttone="button" class="btn btn-link  btn-lg"><%= link_to'Go to product', link_click_path(@product), method: :post, target: "_blank" %></button>
       </p>
 
       <p>

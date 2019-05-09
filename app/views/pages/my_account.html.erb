@@ -14,7 +14,7 @@
                     <p>Associations:</p>
                     <ul> 
                         <li>#Link-clicks: <%= current_user.link_click_total %></li>
-                        <li>#Revenue: <%= current_user.link_click_revenue %></li>
+                        <li>#Revenue: $<%= sprintf("%0.02f",@link_click_revenue) %></li>
                     </ul>
                     
                 </div>
