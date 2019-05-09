@@ -1,4 +1,94 @@
-# README
+# EYEHOPPING (Marketplace Platform)
+## Link:
+## Repo:
+
+### Description of platform
+- Problem/Purpose
+Problem:But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
+The advantage of the online shopping which is time-saving and having more comparable information is losing its benefits.
+Purpose: 
+We want to create a platform that provides the online tool where users can not only create their own list of products they like ,but can be inspired to share and create interaction even with the list of others. They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
+
+- Functionality/Features
+The Networking Marketplace Platform where the user can publish and share the products available for online purchase.
+The user can create and customize the list of products ( as shopping-cart) and share it with other users.
+
+
+- Screenshots
+![alt text](   )
+![alt text](   )
+![alt text](   )
+![alt text](   )
+
+- Tech Stack
+* HTML5
+* CSS3
+* Bootstrap (CSS Framework for styling)
+* CSS GRID
+* Simple Form
+* Ruby on Rails 5.2.1
+* Ruby 2.5.1
+* Visual Studio Code 
+* Trello 
+* Git & Github 
+* Heroku 
+* Google Fonts
+
+- Instructions on how to setup, configure and use 
+
+
+
+
+
+- Design Documentation
+ - Design Process
+ 
+ - User stories
+ Age: 15 (High school)
+Sex: Male
+
+I'm Damien, I want to see which skate board most of my friends like
+so it I can tell my mum what to buy me for christmas
+
+I'm Damien, I want to see what colour jewelery girlfriend likes
+so that i know what to buy her for valentines day
+
+I'm Damien, I want to make a cool selection of products
+so that all the girls can see im trendy
+
+I'm Damien, I want to see what Christiano Ronaldo wears
+so that I can pretend I am him
+
+
+Age: 20
+Sex: Female
+
+I'm Sally, I want to build a big following
+so that brands can contact for sponsership / partnership opportunities
+
+I'm Sally, I want to see Amy is posting so I can get some inspiration from her style.
+
+I'm Sally, I want create the moodboar so my boyfriend can stop buy me crappy presents
+
+I'm Sally, I want to see what skateboards my little brother likes
+so that I can buy him a cool present
+
+Age: 35
+Sex: Female
+
+I'm Amy, I want to create my baby registry list  so my friends can get the items I need for my new baby.
+
+I'm Amy, I want to create my product moodboard so I can present to my followers new upcoming trend.
+
+
+ - Workflow diagram of the user
+ 
+ - Wireframes
+ 
+ - Database ERD
+ 
+ 
+
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
 **2.Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
@@ -77,43 +167,7 @@ Finally, the other users will be able to follow the other users.
 
 **Provide User stories for your App.**
 
-Age: 15 (High school)
-Sex: Male
-
-I'm Damien, I want to see which skate board most of my friends like
-so it I can tell my mum what to buy me for christmas
-
-I'm Damien, I want to see what colour jewelery girlfriend likes
-so that i know what to buy her for valentines day
-
-I'm Damien, I want to make a cool selection of products
-so that all the girls can see im trendy
-
-I'm Damien, I want to see what Christiano Ronaldo wears
-so that I can pretend I am him
-
-
-Age: 20
-Sex: Female
-
-I'm Sally, I want to build a big following
-so that brands can contact for sponsership / partnership opportunities
-
-I'm Sally, I want to see Amy is posting so I can get some inspiration from her style.
-
-I'm Sally, I want create the moodboar so my boyfriend can stop buy me crappy presents
-
-I'm Sally, I want to see what skateboards my little brother likes
-so that I can buy him a cool present
-
-Age: 35
-Sex: Female
-
-I'm Amy, I want to create my baby registry list  so my friends can get the items I need for my new baby.
-
-I'm Amy, I want to create my product moodboard so I can present to my followers new upcoming trend.
-
-
+( Refer to the Project documentation above )
 
 **Provide Wireframes for your App.**
 
