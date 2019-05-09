@@ -21,6 +21,7 @@ class Product < ApplicationRecord
     Favourite.where(user_id: current_user, product_id: product) > 0
   end
 
+  #set a default no image if none provided
   def assign_default_values
     unless self.picture.attached?
       p "second statement"
