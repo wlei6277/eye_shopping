@@ -2,12 +2,12 @@
 <div class="wrapper">
     <% for product in products %>
         <div class="product_container">
-            <% if user_signed_in? %>
+            <div id="product<%=product.id%>">
                 <%= link_to image_tag(product.picture), product_path(product) %>
-                <%= render "general/favourite", product: product %>
-            <% else %>
-                <%= link_to image_tag(product.picture), product_path(product) %>
-            <% end %>
+                <% if user_signed_in? %>
+                    <%= render "general/favourite", product: product %>
+                <% end %>
+            </div>
         </div>
     <% end %>
 </div>
