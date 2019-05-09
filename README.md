@@ -2,9 +2,17 @@
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
 **2.Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
+Online shopping has obtained very important position in the 21 st century as most of the people are busy, loaded with hectic schedule.
+But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
 
+The advantage of the online shopping which is time-saving and having more comparable information is losing its benefits.
 
 **3.Describe the project will you be conducting and how. your App will address the needs.**
+We will provide the marketplace where customers can create their product whishlist and and share with other users. 
+
+They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
+
+
 
 **4.Describe the network infrastructure the App may be based on.**
 
