@@ -82,9 +82,10 @@ class ProductsController < ApplicationController
     #This method is called when someone clicks on the "buy this item" link
     #The method should increment the user who created the products link_click_revenue by 1 ($0.1)  
     #and redirect the person who clicked the link to url of the given product
+    
     @product_creator = User.find(@product.user_id)
     if user_signed_in? 
-      unless (@product_creator.id != current_user.id)
+      unless (@product_creator.id == current_user.id)
         if !@product_creator.link_click_total 
           @product_creator.link_click_total = 1
           @product_creator.link_click_revenue = 1

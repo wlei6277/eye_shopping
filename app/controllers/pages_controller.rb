@@ -38,6 +38,9 @@ class PagesController < ApplicationController
         #This allows multiple elements on the my_account page to access data associated with the logged-in user in a single query
         @current_user = current_user
 
+        #@link_click_revenue is stored as cents in the database - to display in dollar amounts it is divided by 100 
+        @link_click_revenue = current_user.link_click_revenue / 100.0
+
         #displayed_items_count sets the number of each items in each section of the my_account page (i.e. my_board, my_followings, my_favourites)
         @displayed_items_count = 4
 
