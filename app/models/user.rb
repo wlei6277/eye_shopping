@@ -35,6 +35,7 @@ class User < ApplicationRecord
     Follower.where(follower_id: current_user, following_id: displayed_user).exists?
   end
 
+  #assign a default and set link_click values to 0 (to prevent errors when incremented)
   def assign_default_values
     unless self.picture.attached?
       p "second statement"
