@@ -116,8 +116,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 The main tools we used is Trello . We have allocated the task for each purpose and kept on track. Our task was divided to the Model,View and Controller for each routes.
 
 **Discuss how Agile methodology is being implemented in your project.**
-We firstlty focused to have a clear idea of what we are aim to make and the main goal of the app. Before to schedule the whole week, we first spent the first two days to finalise the plan and match database with the actions based on the wireframe and ERD. We constantly merged in git to test the code .
-
+First we focused on having a clear idea of what we intend to do and the main goal of the app. Instead of planning the whole week, we spent the first two days to finalize the plan and match the database with wireframe-based actions and ERD. We constantly joined in git to test the code.
 
 Provide an overview and description of your Source control process.
 Provide an overview and description of your Testing process.
