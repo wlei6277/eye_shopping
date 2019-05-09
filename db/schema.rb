@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_035559) do
     t.bigint "donor_id"
     t.integer "amount"
     t.text "message"
+    t.boolean "confirmed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["donee_id"], name: "index_donations_on_donee_id"
