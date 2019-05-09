@@ -1,3 +1,11 @@
+
+.notice{
+  font-size: 14px;
+    font-weight: 500;
+    color: #af7c7c;
+    padding: 40px;
+}
+
 h3{
   background-color:#333;
   // background-color: #e57070;
@@ -10,12 +18,13 @@ h3{
   width: 30%;
 }
 h2{font-size: 20px;
-  color: #333333;
+  color: #424241;
   font-weight: 700;
   margin-bottom: 50px;
 }
 
 h1{font-size: 20px;
+  font-weight: 450;
 }
 a {
   color: grey;
@@ -66,6 +75,7 @@ font-weight: 300;
 }
 
 
+  
 
 // BUTTON
 
@@ -82,7 +92,7 @@ font-weight: 300;
 .btn-primary{
   color: grey;
     background-color: white;
-    border-color: white;
+    border-color: rgb(209, 206, 206);
     font-size: 12px;
     display: inline-table;
     margin: 3px;
@@ -116,10 +126,42 @@ font-weight: 300;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+textarea{
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: rgba(249, 250, 188, 0.548);
+  border: transparent;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 400;
+  /* height: 30px; */
+  font-size: 15px;
+}
+
 .field{
-  border: 1px solid rgba(211, 210, 203, 0.9);
+  // border: 1px solid rgba(211, 210, 203, 0.9);
   border-radius: 4px;
   padding: 0 0 0 3vw;
+}
+
+input[type="text"] {
+  color: #333333;
+  background-color: #fcf8e3;
+  border-color: #fcf8e3;
+  font-weight: 600;
+  border: thick;
+  height: 4vw;
+  padding: 2vw;
+}
+[type="email"] {
+  color: #333333;
+  background-color: #fcf8e3;
+  border-color: #fcf8e3;
+  font-weight: 600;
+  border: thick;
+  height: 4vw;
+  padding: 2vw;
 }
 
 // COMMENTS_NEW
