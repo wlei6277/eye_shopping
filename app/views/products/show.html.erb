@@ -9,7 +9,7 @@
        <div class="product_container">
         <%= image_tag @product.picture if @product.picture.attached? %>
         <% if user_signed_in? %>
-        <%= render "general/favourite", product: @product %>
+          <%= render "general/favourite", product: @product %>
         <% end %>   
         </div>  
       </p>
@@ -17,8 +17,7 @@
 
     <div class="product_info">
       <p>
-        <strong>User:</strong>
-        <%= @product_owner.name %>
+        <%= link_to @product_owner.name, user_path(@product_owner) %>
       </p>
 
       <p>

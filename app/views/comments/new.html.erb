@@ -21,6 +21,9 @@
                 <h5 class="card-title">
                     <%= form.hidden_field :user_id, value: current_user.id  %>
                 </h5>
+                <h5 class="card-title">
+                    <%= form.hidden_field :product_id, value: @product.id  %>
+                </h5>
 
                 <p class="card-text">
                     <%= form.label :body %>
@@ -32,7 +35,7 @@
    <button type="button" class="btn btn-sm btn-outline-primary"> <%= form.submit %></div>
   </div>
 <% end %>
-            <span class="badge badge-danger"><%= link_to 'Back', @comments_path %></span>
+            <span class="badge badge-danger"><%= link_to 'Back', product_path(@product) %></span>
             </div>
         </div>
     </div>
