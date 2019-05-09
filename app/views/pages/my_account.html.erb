@@ -10,7 +10,7 @@
                     <%= image_tag (@current_user.picture) %>
                     <h4><%= @current_user.email %> </h4>
                     <%# <div class="statistics"> %>
-                    <p>#Total Donations: <%= current_user.donation_total %></p>
+                    <p>#Total Donations: <%= sprintf( "%0.02f", @donation_total) %></p>
                     <p>Associations:</p>
                     <ul> 
                         <li>#Link-clicks: <%= current_user.link_click_total %></li>
