@@ -9,12 +9,24 @@ class DonationsController < ApplicationController
         @donation = Donation.create(donations_params)
         
         #convert amount from form (cents by default) into dollars 
-        @donation.amount = @donation.amount*100
-        @donation.save
+        if @donation.amount
+            @donation.amount = @donation.amount*100
+        end  
 
-        #redirect to the submit view where the user confirms the donation  
-        redirect_to submit_donation_path(@donation)
+       
+        
+        #validate if the donation has been saved 
+        if @donation.save
+            #redirect to the submit view where the user confirms the donation  
+            redirect_to submit_donation_path(@donation)
+        else
+            flash[:notice] = "Oops your donation amount must be greater than $1"
+            redirect_back(fallback_location: root_path) 
+        end
+        
+        
     end
+
     def submit
         #fetch the donation that was just created in the database
         @donee = User.find(@donation.donee_id)
