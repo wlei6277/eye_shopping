@@ -6,7 +6,7 @@
 **Problem/Purpose**
 - Problem: As the internet has become increasingly integrated and adopted by mainstream society the number of online products and services has grown exponentially. Almost any product which is available for purchase offline can be found on the internet. The problem with today's online shopping experience is that although the range of online products is massive, filtering this range to find the product which will fulfill each individual consumers needs and wants is becoming increasingly difficult. Pioneriing behavourial economics and psychology studies reveal that humans find it increasingly difficult to make a decision when the number of choices grows. 
 
-Giant companies are getting better and better at targeting individual consumer wants and needs through avenues such as paid SEO, programmatic advertising (Google AdWords / Facebook Marketing) and influencer campaigns. As the competition instensifies, industries with more constrained resources are finding it increasingly difficult to reach consumers. From the consumers perspective this means that finding products which are outside of the boundarys of well funded marketing budgets is more cubersome.  
+- Giant companies are getting better and better at targeting individual consumer wants and needs through avenues such as paid SEO, programmatic advertising (Google AdWords / Facebook Marketing) and influencer campaigns. As the competition instensifies, industries with more constrained resources are finding it increasingly difficult to reach consumers. From the consumers perspective this means that finding products which are outside of the boundarys of well funded marketing budgets is more cubersome.  
 
 - Purpose: 
 We want to create a platform that provides the online tool where users can not only create their own list of products they like ,but can be inspired to share and create interaction even with the list of others. They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
@@ -104,12 +104,14 @@ so that I can pretend I am him
 Age: 20
 Sex: Female
 
-I'm Sally, I want to build a big following
-so that brands can contact for sponsership / partnership opportunities
+I'm Sally, I want to create content on Eye Shopping
+so that I can earn money when people buy the products i've uploaded
 
-I'm Sally, I want to see Amy is posting so I can get some inspiration from her style.
+I'm Sally, I want to see Amy is posting 
+so that I can get some inspiration from her style.
 
-I'm Sally, I want create the moodboar so my boyfriend can stop buy me crappy presents
+I'm Sally, I want create the moodboard
+so that my boyfriend can stop buying me crappy presents
 
 I'm Sally, I want to see what skateboards my little brother likes
 so that I can buy him a cool present
