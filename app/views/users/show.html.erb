@@ -1,42 +1,40 @@
 
 <div class="container">
-  <div class="row">
-<%= render "general/profile_container", user: @displayed_user %>
- <button type="button" class="btn btn-secondary btn-lg"><%= render "general/follow", displayed_user_id: @displayed_user.id %></button>
+    <div class="row">
+        <%= render "general/profile_container", user: @displayed_user %>
+        <button type="button" class="btn btn-link  btn-lg><%= render "general/follow", displayed_user_id: @displayed_user.id %></button>
 
-
-  
-        <div class="statistics">
-        <div class="col-sm">
-            <p class="my_board_follower">#Followers: <%= @followers_count %></p>
-        </div>
-        <div class="col-sm">
-            <p class="my_board_donation">#Dontations: $<%= sprintf( "%0.02f", @donation_total) %></p>
+            <div class="statistics">
+                <div class="col-sm">
+                <p class="my_board_follower">#Followers: <%= @followers_count %></p>
+                </div>
+                <div class="col-sm">
+                <p class="my_board_donation">#Dontations: $<%= sprintf( "%0.02f", @donation_total) %></p>
+                </div>
             </div>
-        </div>
- 
-<% if user_signed_in? %>
-    <div class="donation_form">
-        <label>Donate to <%= @displayed_user.name%></label>
-        <%= form_with(url: "/donations", action: :create, method: :post,  local: true) do |form| %>
-            <%= form.hidden_field :donor_id, value: current_user.id %>
-            <%= form.hidden_field :donee_id, value: @displayed_user.id %>
-            <div class="field">
-                <%= form.label :amount %>
-                <%= form.number_field :amount %>
+    
+            <% if user_signed_in? %>
+            <div class="donation_form">
+                <label>Donate to <%= @displayed_user.name%></label>
+                <%= form_with(url: "/donations", action: :create, method: :post,  local: true) do |form| %>
+                <%= form.hidden_field :donor_id, value: current_user.id %>
+                <%= form.hidden_field :donee_id, value: @displayed_user.id %>
+                <div class="field">
+                    <%= form.label :amount %>
+                    <%= form.number_field :amount %>
+                </div>
+                <div class="field">
+                    <%= form.label :message %>
+                    <%= form.text_field :message %>
+                
+               
+                    <%= form.submit "DONATE", class:"btn btn-primary" %>
+                <% end %>
+                </div>
             </div>
-            <div class="field">
-                <%= form.label :message %>
-                <%= form.text_field :message %>
-            </div>
-            <%# <button type="button" class="btn btn-dark"> %>
-                <%= form.submit "DONATION", class:"btn btn-primary" %>
-            <%# </button> %>
-        <% end %>
+            <br>
+            <br>
+                <% end %>
+            <%= render "general/product_grid", products: @displayed_user.products %>
     </div>
-    <% end %>
-
-   
-    <%= render "general/product_grid", products: @displayed_user.products %>
-   </div>
 </div>

@@ -47,7 +47,7 @@ class PagesController < ApplicationController
         @link_click_revenue = current_user.link_click_revenue / 100.0
 
         #displayed_items_count sets the number of each items in each section of the my_account page (i.e. my_board, my_followings, my_favourites)
-        @displayed_items_count = 4
+        @displayed_items_count = 3
 
         #@donation_total calculates the total amount of donations the logged-in user has recieved and passes this to the view 
         #@donation_total is converted into dollar amounts by dividing by 100 (the amount is stored in the database as cents)  

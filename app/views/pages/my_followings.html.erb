@@ -1,19 +1,16 @@
 <div class="container">
     <div class="row">
-    <div class="col">
-        <h3>Followings.</h3>
-        <% for profile in @following_profiles%>
-        <div class="followings_box">
-        <%= render "general/profile_container", user: profile %>
-        <div class="adjusted_following">
-            <%= render "general/product_grid", products: select_items(collection: profile.products, num_of_items: 3) %>
-        </div>
-        </div>
-    <hr class="followingline">
-   
-       <div>
-        <% end %>
-     
-       
+        <div class="col">
+            <h3>Followings.</h3>
+            <% for profile in @following_profiles%>
+            <div class="followings_box">
+            <%= render "general/profile_container", user: profile %>
+                <div class="adjusted_following">
+                <%= render "general/product_grid", products: select_items(collection: profile.products, num_of_items: 3) %>
+                </div>
+            </div>
+            <hr class="followingline">
+        <div>
+                <% end %>    
     </div>
 </div>

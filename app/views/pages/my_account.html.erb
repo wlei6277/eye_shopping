@@ -1,31 +1,27 @@
 <div class="container">
     <div class="row">
-
-
         <div class="master"w-100 mt-4 pt-3">
-            <div class="row">
-                <div class="col-6 col-md-4">
             
+                <div class="col-6 col-md-4">
                     <h2><%= @current_user.name %></h2>
                     <%= image_tag (@current_user.picture) %>
                     <h4><%= @current_user.email %> </h4>
                     <%# <div class="statistics"> %>
-                    <p>#Total Donations: <%= sprintf( "%0.02f", @donation_total) %></p>
-                    <p>Associations:</p>
+                    <p class="my_board_donation">#Total Donations: <%= sprintf( "%0.02f", @donation_total) %></p>
+                    <h1>Associations:</h1>
                     <ul> 
-                        <li>#Link-clicks: <%= current_user.link_click_total %></li>
-                        <li>#Revenue: $<%= sprintf("%0.02f",@link_click_revenue) %></li>
+                        <h1>#Link-clicks: <%= current_user.link_click_total %></h1>
+                        <h1>#Revenue: $<%= sprintf("%0.02f",@link_click_revenue) %></h1>
                     </ul>
-                    
+                     <%= link_to "Edit account information", edit_user_registration_path(@current_user),class:"btn btn-primary" %>
                 </div>
-    
+
                 <div class="col-12 col-md-8">
-                    <%= link_to "Edit account information", edit_user_registration_path(@current_user) %>
-                
 <%# MY BOARD %>
-                    <div class="button">
-                        <%= link_to  "MY BOARD", my_board_path %>
-                    </div>
+                    
+
+                        <%= link_to  "MY BOARD", my_board_path,class:"btn btn-dark" %>
+                  
                     <div class="container">
                         <div class="row align-items-start">
                             <div class="col">
@@ -38,7 +34,7 @@
 
 <%# FOLLOWING %>
                     <div class="button">
-                        <%= link_to  "MY FOLLOWINGS", my_followings_path %>
+                        <%= link_to  "MY FOLLOWINGS", my_followings_path,class:"btn btn-dark" %>
                     </div>
                     
                     <div class="container">
@@ -50,29 +46,29 @@
                                 
                                     <%= link_to image_tag(user_profile.picture), user_path(user_profile) %>
                                     <% user_profile.name %>
-                                
-                                <% end %>
+                                    <% end %>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>  
 
 <%# FAVOURTIES %>                    
                     <div class="button">
-                            <%= link_to  "MY FAVOURITES", my_favourites_path %>
-                        </div>
+                            <%= link_to  "MY FAVOURITES", my_favourites_path,class:"btn btn-dark" %>
+                    </div>
                     <div class="container">
-                    <div class="row align-items-start">
+                         <div class="row align-items-start">
                             <div class="col">
                                 <div class="adjusted_grid">
-                    
-                    <%= render  "general/product_grid", products: select_items(collection: @favourited_products, num_of_items: @displayed_items_count) %>
+                                <%= render  "general/product_grid", products: select_items(collection: @favourited_products, num_of_items: @displayed_items_count), locals:{ myclass: "myaccount_favourites"}   %>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
-            </div> 
+
+
+            
         </div>
-
-
     </div>
 </div>
