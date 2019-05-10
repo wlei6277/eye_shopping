@@ -55,7 +55,26 @@ We want to create a platform that provides the online tool where users can not o
 
 - Instructions on how to setup, configure and use 
 
+git clone https://github.com/wlei6277/eye_shopping.git
+-> navigate to the directory with the commandline: 
 
+cd ~/code/eye-shopping
+
+Inside the commandline at that directory, run the followings :
+
+bundle install
+
+Then create the database
+
+rails db:create
+
+and run the migrations
+
+rails db:migrate
+
+rails s
+
+(By default the server runs on Port 3000, so to view the live site on your local machine, head to localhost:3000 )
 
 
 
