@@ -1,5 +1,12 @@
 class User < ApplicationRecord
+  #Assign default values for picture (if none provided by the user), link_click_total and link_click_revenue
   after_initialize :assign_default_values
+
+  #This validation method ensures the user enters their name during sign up
+  #Note a default image image is allocated if no image is provided by the user
+  validates :name, presence: true
+
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

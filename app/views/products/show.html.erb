@@ -12,7 +12,11 @@
     </div>
     <div class="product_info">
       <h2>
-        <%= link_to @product_owner.name, user_path(@product_owner) %>
+        <% if user_signed_in? and (current_user == @product_owner) %>
+          <%= link_to @product_owner.name, my_board_path %>
+        <% else %>   
+          <%= link_to @product_owner.name, user_path(@product_owner) %>
+        <% end %>
       </h2>
       <p>
         <strong>Price:</strong>
