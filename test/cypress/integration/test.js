@@ -1,6 +1,7 @@
 describe('Rails Eye Shopper test', function() {
     // Test 1: Can a user log-in?
         it("Log-in user", function() {
+            
         });
     // Test 2: Can a user log-out?
         it("Log-out user", function() {
