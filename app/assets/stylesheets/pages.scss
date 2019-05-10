@@ -42,6 +42,9 @@
   display: flex;
   
 }
+// .adjusted_following .wrapper img{
+//   width: 200px;
+//   height: 200px;
 
 // MY BOARD
 .my_board_container {
@@ -55,7 +58,7 @@
 
   .glyphicon-remove{
           color: #ecce36;
-          left: 166px;
+          left: 260px;
           } 
           
 }
@@ -175,12 +178,28 @@ font-size:12px;
   margin: 0 8px 10px 8px;
 }
 
+.btn-dark{
+  color: #8a6d3b;
+    background-color: transparent;
+    background-image: none;
+    /* border-color: #8a6d3b; */
+    margin: 20px 8px 20px 8px;
+    font-weight: 500;
+    font-size: 20px;
+}
 
-@media (max-width: 1327px){
+@media (max-width: 1200px){
 .adjusted_following .wrapper{
   width: 92%;
   margin: 0 0 0 2%;
   display: flex;
   flex-wrap: wrap;
   
-}}
+}
+// .adjusted_grid .wrapper{
+// width: 100%;
+//     margin: 0 auto;
+//     display: flex;
+//     flex-direction: column;
+// }
+}
