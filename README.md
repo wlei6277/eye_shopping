@@ -138,8 +138,11 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
    
  - Project plan&Timeline
+ <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/Screen%20Shot%202019-05-11%20at%208.11.54%20am.png" width="600">
  
  - Trello
+
+ 
  
  
  
