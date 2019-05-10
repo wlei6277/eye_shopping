@@ -55,14 +55,15 @@ We want to create a platform that provides the online tool where users can not o
 
 - Instructions on how to setup, configure and use 
 
-git clone https://github.com/wlei6277/eye_shopping.git
--> navigate to the directory with the commandline: 
+ > git clone https://github.com/wlei6277/eye_shopping.git
 
-cd ~/code/eye-shopping
+ navigate to the directory with the commandline: 
+
+ > cd ~/code/eye-shopping
 
 Inside the commandline at that directory, run the followings :
 
-bundle install
+ > bundle install
 
 Then create the database
 
