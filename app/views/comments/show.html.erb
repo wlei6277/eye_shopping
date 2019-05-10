@@ -1,25 +1,27 @@
 <div class="container">
     <div class="row">
-<p id="notice"><%= notice %></p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @comment.product.name %>
-</p>
+      <p>
+        <strong>Product:</strong>
+        <%= @comment.product.name %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @comment.user.name %>
-</p>
+      <p>
+        <strong>User:</strong>
+        <%= @comment.user.name %>
+      </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @comment.body %>
-</p>
-<% if user_signed_in? and (@comment.user_id == current_user.id) %>
-  <%= link_to 'Edit', edit_comment_path(@comment) %>
-  <%= link_to 'Delete', comment_path(@comment) %>
-<% end %>
-<%= link_to 'Back', product_path(@product) %>
-</div>
+      <p>
+        <strong>Body:</strong>
+        <%= @comment.body %>
+      </p>
+      <p>
+      <% if user_signed_in? and (@comment.user_id == current_user.id) %>
+        <%= link_to 'Edit', edit_comment_path(@comment) %>
+        <%= link_to 'Delete', comment_path(@comment) %>
+      <% end %>
+      <%= link_to 'Back', product_path(@product) %>
+      </p>
+    </div>
 </div>

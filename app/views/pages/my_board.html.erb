@@ -1,28 +1,25 @@
 
 <div class="container">
     <div class="row">
-
- <div class="my_board_container"> 
-    <div class="my_board_profile">
-      <%= render "general/profile_container", user: current_user %>
-      <h1 class="my_board_follower">Followers# <%= @followers_count %></h1>
-      <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
-      <div class="plus">
-        <%= link_to '', new_product_path, class: "glyphicon-plus-sign" %>
+      <div class="my_board_container"> 
+        <div class="my_board_profile">
+            <%= render "general/profile_container", user: current_user %>
+          <h1 class="my_board_follower">Followers# <%= @followers_count %></h1>
+          <!-- NEED TO PUT IN THE DONATION COUNT!!!!!!!!!!!! -->
+          <div class="plus">
+            <%= link_to '', new_product_path, class: "glyphicon-plus-sign" %>
+          </div>
+        </div>
+        <div class="wrapper">
+              <% for product in @my_products %>
+          <div class="product_container">
+              <%= link_to image_tag(product.picture), product_path(product) %>
+              <%= render "general/favourite", product: product %>
+              <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
+          </div>
+              <% end %>
+        </div>
       </div>
     </div>
-   <div class="wrapper">
-        <% for product in @my_products %>
-    <div class="product_container">
-          <%= link_to image_tag(product.picture), product_path(product) %>
-          <%= render "general/favourite", product: product %>
-          <%= link_to '', product_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>  
-      </div>
-        <% end %>
-</div>
-    
-  </div>
- 
-</div>
 </div>
 
