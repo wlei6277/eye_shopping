@@ -67,13 +67,13 @@ Inside the commandline at that directory, run the followings :
 
 Then create the database
 
-rails db:create
+ > rails db:create
 
 and run the migrations
 
-rails db:migrate
+ > rails db:migrate
 
-rails s
+ > rails s
 
 (By default the server runs on Port 3000, so to view the live site on your local machine, head to localhost:3000 )
 
@@ -138,7 +138,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
  
  - Trello
  
- 
+*SHORT ANSWER QUESTIONS
 
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
