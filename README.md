@@ -89,7 +89,7 @@ and run the migrations
 Sex: Male
 
 I'm Damien, I want to see which skate board most of my friends like
-so it I can tell my mum what to buy me for christmas
+so that I can tell my mum what to buy me for christmas
 
 I'm Damien, I want to see what colour jewelery girlfriend likes
 so that i know what to buy her for valentines day
