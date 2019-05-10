@@ -30,10 +30,10 @@ We want to create a platform that provides the online tool where users can not o
 
 
 **Screenshots**
-![alt text](   )
-![alt text](   )
-![alt text](   )
-![alt text](   )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/mainpage.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/myaccount.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/following.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/favourties.png  )
 
 **Tech Stack**
   - HTML5
@@ -126,7 +126,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
  - Workflow diagram of the user
 
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/workflow/img">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/New%20Wireframe%203.png">
 
  - Wireframes
 <p align="center">
