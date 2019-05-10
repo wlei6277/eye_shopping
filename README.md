@@ -126,22 +126,28 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
  - Workflow diagram of the user
 
- 
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/workflow/img">
+
  - Wireframes
 <p align="center">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20BOARD.png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FAVOURITES%20.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FOLLOWING%20LIST.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20PROFILE.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/PRODUCT%20LIST%20(%20MainPage).png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/Product%20page.png">
 </p>
-
  - Database ERD
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/ERD/erd.png">
+ 
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/ERD/erd1.png">
 
    
  - Project plan&Timeline
- <img src="https://github.com/wlei6277/eye_shopping/blob/master/images/Screen%20Shot%202019-05-11%20at%208.11.54%20am.png" >
+ <img src="hhttps://github.com/wlei6277/eye_shopping/blob/master/images/timeline.png" >
  
  - Trello
-
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/trello/trello1.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/trello/trello2.png">
  
  
  
@@ -333,3 +339,6 @@ Heroku provide SSL certificate with HTTPS so the data is encrypt between server 
 > In each controller we have whitelisted parameters provided by the user - this protects against users providing their own and potentially corrupt parameters to use application in unitended ways
 
 **Research what your legal obligations are in relation to handling user data.**
+To provide functionality and interaction to users, we will need to collect user activity data.
+
+Although the cookie consent pop-up is not a mandatory requirement in Australia, since the app is not limited to just one market and in the future if we are aiming to expand to Europe, we will need to use cookie consent pop-ups because of the European Union’s (EU) General Data Protection Regulation  (The GDPR not only applies to businesses located within the EU, but also to all businesses , wherever they may be located, that collect personal data from individuals based in the EU)
