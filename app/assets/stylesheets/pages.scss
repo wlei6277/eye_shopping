@@ -131,7 +131,10 @@ padding-left: 10px;
 }
 
 // SHOW
-
+.follow_button_show{
+  display: flex;
+  flex-direction: column;
+}
 .statistics{
   display: flex;
   flex-direction: row;

@@ -2,8 +2,7 @@
 <div class="container">
     <div class="row">
         <%= render "general/profile_container", user: @displayed_user %>
-        <button type="button" class="btn btn-link  btn-lg><%= render "general/follow", displayed_user_id: @displayed_user.id %></button>
-
+        <div class="follow_button_show">
             <div class="statistics">
                 <div class="col-sm">
                 <p class="my_board_follower">#Followers: <%= @followers_count %></p>
@@ -12,9 +11,12 @@
                 <p class="my_board_donation">#Dontations: $<%= sprintf( "%0.02f", @donation_total) %></p>
                 </div>
             </div>
-    
+            <button type="button" class="btn btn-link  btn-lg><%= render "general/follow", displayed_user_id: @displayed_user.id %></button>
+
+        </div>
+
             <% if user_signed_in? %>
-            <div class="donation_form">
+            <div class= "donation_form">
                 <label>Donate to <%= @displayed_user.name%></label>
                 <%= form_with(url: "/donations", action: :create, method: :post,  local: true) do |form| %>
                 <%= form.hidden_field :donor_id, value: current_user.id %>
