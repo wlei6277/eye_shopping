@@ -149,10 +149,10 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
 **2.Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
-Online shopping has obtained very important position in the 21 st century as most of the people are busy, loaded with hectic schedule.
-But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
 
-The advantage of the online shopping which is time-saving and having more comparable information is losing its benefits.
+- As the internet has become increasingly integrated and adopted by mainstream society the number of online products and services has grown exponentially. Almost any product which is available for purchase offline can be found on the internet. The problem with today's online shopping experience is that although the range of online products is massive, filtering this range to find the product which will fulfill each individual consumers needs and wants is becoming increasingly difficult. Pioneriing behavourial economics and psychology studies reveal that humans find it increasingly difficult to make a decision when the number of choices grows. 
+
+- Giant companies are getting better and better at targeting individual consumer wants and needs through avenues such as paid SEO, programmatic advertising (Google AdWords / Facebook Marketing) and influencer campaigns. As the competition instensifies, industries with more constrained resources are finding it increasingly difficult to reach consumers. From the consumers perspective this means that finding products which are outside of the boundarys of well funded marketing budgets is more cubersome.  
 
 **3.Describe the project will you be conducting and how. your App will address the needs.**
 We will provide the marketplace where customers can create their product whishlist and and share with other users. 
@@ -162,6 +162,7 @@ They will be able to find innovative and updated products available online to pr
 
 
 **4.Describe the network infrastructure the App may be based on.**
+Our application is browser based. Users connect to our app using an internet connected device which makes HTTP requests to our server. We have hosted Eye Shopping on Heroku using Puma as the server software. This means that the code functionality is made available to users through Puma and the server hardware provided by Heroku.   
 
 
 **5.Identify and describe the software to be used in your App.**
@@ -199,23 +200,76 @@ The code regarding data storage is written inside of a model, code shown to the 
 
 
 **Explain the different high-level components (abstractions) in your App.**
+The following high-level abstractions enable our Ruby on Rails application to function as intended:
+  > MVC architecture - code is broken down into files, each with a specific purpose within the dynamic website (e.g. code written in models handles data storage). This supports a faster development cycle and enables us to leverage abstractions already baked into Rails (e.g. form view helpers)      
+  > Routing - Configuring routes in the Rails routing file enables users to interact with our site through HTTP requests. Users can navigate and interact with our website using the routes we defined in the routing file. 
+  > APIs - We leveraged the Stripe and AWS APIs to add additional functionality to our application without having to develop this internally. This works because Stripe and AWS have already built the code for this functionality and have enabled us to access this functionality in our own application through their own routing mechanism.
+  > Gems - we leveraged a number of Ruby gems to speed up development and add additional functionality (e.g. Devise, Bootstrap and Cypress) 
+
 
 
 **Detail any third party services that your App will use.**
-AWS cloud services platform
-STRIPE Implementing a payment system
+AWS cloud services platform - we use this for active storage of User and Product images
+STRIPE Implementing a payment system - we use this to accept payment from users enabling them to donate to other users
 
 **Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).**
-At the level of our first prototype, the structure is very similar with PINTEREST or INSTAGRAM. But our goal is to develop the features of being able to retrieve the sales commissions of the posts that users have created. So the final version of our app will be the mix of PINTEREST and all other online redirect shopping sites like LYST.
+At the level of our first prototype, the structure is very similar with PINTEREST or INSTAGRAM. Content (data) is user driven and is largely focused on images. As in PINTREST or INSTAGRAM our users are able to follow and share content with other users as well as favourite/ bookmark content.
+
+Our main point of difference is to develop the features of being able to retrieve the sales commissions of the posts that users have created. So the final version of our app will be the mix of PINTEREST and all other online redirect shopping sites like LYST.
 
 **Discuss the database relations to be implemented.**
-Currently the database have six tables. The main table which is products, is conntected to users(who create the product_id),departments,colors and have many comments and favourites.
-The users have many followers,comments and favourites.
+Currently the database have eight tables.
+
+1. Products - storing information about the products that users have created
+2. Departments - different departments (product categories) of a product - this has been put into a seperate database to enable further parameters / information to added in future development
+3. Comments - storing information on the comments added to products by users
+4. Favourites - storing who has favourited which products
+5. Followers - storing which user has followed who
+6. Donations - storing information about donations made between users
+7. Users - storing information about users (note Devise was able to abstract the detail behind this for us)
+8. Active record storage - for storing information to enable storage of images
+ 
+Note we are using the AWS API for active record storage 
 
 **Describe your project’s models in terms of the relationships (active record associations) they have with each other.**
-Once the user is signed in to the app, so is associated to the user_id,will be able to create the product ( which will created the product_id associated to the user_id) with name,price,department(department_id),color(color enum),url_link and description. 
-Once the product is created, the user will be able to comment and favourite ( product: has many comments and followers).
-Finally, the other users will be able to follow the other users.
+
+
+Products - full CRUD resource enabling users to interact with and share products
+ > Has many comments
+ > Has many favourites 
+ > Belongs to a department
+ > Has an attached picture
+ 
+
+Departments - describes the category the product belongs to
+ > Has many products
+
+Comments - full CRUD resources which enables users to comment on products
+ > Belongs to a product
+ > Belongs to a user
+ 
+Favourites - enables users to favourite and unfavourite a product
+ > Belongs to a product 
+ > Belongs to a user
+ 
+Followers - enables users to follow other users
+ > Belongs to follower through the user model
+ > Belongs to following through the user model
+ 
+Donations
+ > Belongs to donor (user who made the donation) through the user model
+ > Belongs to donee (user who the donation is being made to) through the user model
+
+Users
+ > has many favourites
+ > has many comments
+ > has many products
+ > has many followers through the follower_id foreign key
+ > has many followings through the following_id foreign key
+ > has many donations through the donor_id foreign key
+ > has many donors through the donee_id foreign key
+ > has an attached user profile image
+
 
 **Provide your database schema design.**
 [link to ERD] https://dbdiagram.io/d/5cc63f6cf7c5bb70c72fc97e .
@@ -244,7 +298,24 @@ We found it very useful to track all the codes previously written in repository 
 
 
 **Provide an overview and description of your Testing process.**
+We have utilised automated browser testing in this project. To do this we leveraged the Cypress gem which walks through the code in our testing files excuting each test case. This opens a browser window and attempts to execute the actions defined in the test file. 
 
+We used automated browser testing for the following reasons:
+ > it ensures that users can actually utilise the funcionatility of our app in the way intended
+ > we can easily and quickly re-run the tests each time we update the application
+ > it avoids human biases and potential for human error in the testing process
+ 
+The main tests we performed were:
+ > Can a user log-in?
+ > Can a user log-out?
+ > Can a user create a product?
+ > Can a user edit a product?
+ > Can a user delete a product?
+ > Can a user follow another user?
+ > Can a user unfollow another user?
+ > Can a user favourite a product?
+ > Can a user unfavourite a product?
+ > Can a user access the my-board page?
 
 
 
@@ -253,6 +324,9 @@ We found it very useful to track all the codes previously written in repository 
 Heroku provide SSL certificate with HTTPS so the data is encrypt between server and the user.
 
 **Discuss methods you will use to protect information and data.**
-Devise/Heroku
+> We leverage Rails functionality to protect against hacking a malicous use of the application. This includes:
+ - authenticity tokens and protection against cross site reference forgery
+ - protection against sql injection through the ORM model
+> In each controller we have whitelisted parameters provided by the user - this protects against users providing their own and potentially corrupt parameters to use application in unitended ways
 
 **Research what your legal obligations are in relation to handling user data.**
