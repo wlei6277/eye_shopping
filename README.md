@@ -132,13 +132,17 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 </p>
 
  - Database ERD
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/ERD/erd.png">
 
    
  - Project plan&Timeline
  
  - Trello
  
-*SHORT ANSWER QUESTIONS
+ 
+ 
+ 
+**SHORT ANSWER QUESTIONS**
 
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
