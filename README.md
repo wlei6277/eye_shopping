@@ -1,17 +1,32 @@
 # EYEHOPPING (Marketplace Platform)
-## Link:
-## Repo:
+## Link: https://eye-shopping.herokuapp.com/
+## Repo: https://github.com/wlei6277/eye_shopping
 
 ### Description of platform
 **Problem/Purpose**
-- Problem:But rapidly grown numbers of offers are massive that the consumers are impossible to track all the information provided.
-The advantage of the online shopping which is time-saving and having more comparable information is losing its benefits.
+- Problem: As the internet has become increasingly integrated and adopted by mainstream society the number of online products and services has grown exponentially. Almost any product which is available for purchase offline can be found on the internet. The problem with today's online shopping experience is that although the range of online products is massive, filtering this range to find the product which will fulfill each individual consumers needs and wants is becoming increasingly difficult. Pioneriing behavourial economics and psychology studies reveal that humans find it increasingly difficult to make a decision when the number of choices grows. 
+
+Giant companies are getting better and better at targeting individual consumer wants and needs through avenues such as paid SEO, programmatic advertising (Google AdWords / Facebook Marketing) and influencer campaigns. As the competition instensifies, industries with more constrained resources are finding it increasingly difficult to reach consumers. From the consumers perspective this means that finding products which are outside of the boundarys of well funded marketing budgets is more cubersome.  
+
 - Purpose: 
 We want to create a platform that provides the online tool where users can not only create their own list of products they like ,but can be inspired to share and create interaction even with the list of others. They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
 
-**Functionality/Features**
-- The Networking Marketplace Platform where the user can publish and share the products available for online purchase.
-- The user can create and customize the list of products ( as shopping-cart) and share it with other users.
+**Current Functionality/Features**
+- The user can save items found online in one location so they can track back those items whenever they want
+- The user can create a mood-board like shopping cart to express their style and personality which shared with other users
+- The user can see and follow other users boards to get exposure to other peoples styles and inspiration for future online shopping
+- The user can earn revenue by redirecting traffic from their mood board and products to the final retail website 
+- The users can donate to other users to express gratitude for creating products / mood-boards 
+- Eye Shopping will always be free to use as well as ad-free because the commercial model of the platform is through content creation (affliate marketing) 
+
+**Features Beyond The Scope of Proof of Concept**
+- Currently the Eye Shopping platform funds the link-click revenue generated for users, in the future this would be paid by the   destination retailer
+- The user can display their mood-board on their own website / blog (e.g. through an iFrame)
+- The user can automatically create and upload products to Eye Shopping using a browser plugin 
+- The user can automatically create and upload products through the retailers website / platform (e.g. payment through PayPal)
+- A user will be able to automatically see product stock levels (with out-of-stock items being greyed out)
+- Users will be able to create more than one board based on factors such as product selection, themes, occassions etc.
+- User can create dynamic interactive contents which can be displayed both on the Eye Shopping platform as well as their own website
 
 
 **Screenshots**
@@ -28,6 +43,10 @@ We want to create a platform that provides the online tool where users can not o
   - Simple Form
   - Ruby on Rails 5.2.1
   - Ruby 2.5.1
+  - Javascript
+  - Devise
+  - Cypress
+  - Stripe
   - Visual Studio Code 
   - Trello 
   - Git & Github 
