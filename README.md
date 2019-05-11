@@ -84,6 +84,7 @@ and run the migrations
 - **Design Documentation**
 
   - Design Process
+  Wireframe/Layout --> ColorPalette
  
  
   - **User stories**
