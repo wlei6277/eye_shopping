@@ -30,12 +30,12 @@ We want to create a platform that provides the online tool where users can not o
 
 
 **Screenshots**
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/homepage.png  )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/myaccount.png  )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/myboard.png )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/following.png  )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/favourites.png  )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/prdocutpage.png)
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/homepage.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/myaccount.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/myboard.png )
+![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/following.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/favourites.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/prdocutpage.png)
 
 **Tech Stack**
   - HTML5
@@ -81,12 +81,12 @@ and run the migrations
 
 
 
-- Design Documentation
+- **Design Documentation**
 
   - Design Process
  
  
-  - User stories
+  - **User stories**
  Age: 15 (High school)
 Sex: Male
 
@@ -126,30 +126,30 @@ I'm Amy, I want to create my baby registry list  so my friends can get the items
 I'm Amy, I want to create my product moodboard so I can present to my followers new upcoming trend.
 
 
- - Workflow diagram of the user
+ - **Workflow diagram**
 
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/New%20Wireframe%203.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/New%20Wireframe%203.png">
 
- - Wireframes
+ - **Wireframes**
 <p align="center">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20BOARD.png" width="400">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FAVOURITES%20.png" width="400">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20FOLLOWING%20LIST.png">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/MY%20PROFILE.png">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/PRODUCT%20LIST%20(%20MainPage).png">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/wireframe/Product%20page.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20BOARD.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20FAVOURITES%20.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20FOLLOWING%20LIST.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20PROFILE.png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/PRODUCT%20LIST%20(%20MainPage).png" width="400">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/Product%20page.png" width="400">
 </p>
- - Database ERD
+ - **Database ERD**
  
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/ERD/erd1.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/ERD/erd1.png">
 
    
- - Project plan&Timeline
- <img src="hhttps://github.com/wlei6277/eye_shopping/blob/master/images/timeline.png" >
+ - **Project plan&Timeline**
+ <img src="hhttps://github.com/wlei6277/eye_shopping/blob/master/docs/timeline.png" >
  
- - Trello
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/trello/trello1.png">
-<img src="https://github.com/wlei6277/eye_shopping/blob/master/images/trello/trello2.png">
+ - **Trello**
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello1.png">
+<img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello2.png">
  
  
  
