@@ -1,5 +1,9 @@
 class Product < ApplicationRecord
   after_initialize :assign_default_values
+
+  #The name and url_link fields on the new product fields are required because they critical for how products are displayed to the user
+  #Note a default image is allocated to the product if none is uploaded by a user
+  #Other fields such as price, department, color and description are not required as they non-critical to the user display 
   validates :name, :url_link, presence: true
 
   belongs_to :user
