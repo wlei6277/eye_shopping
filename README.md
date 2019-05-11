@@ -30,10 +30,12 @@ We want to create a platform that provides the online tool where users can not o
 
 
 **Screenshots**
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/mainpage.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/homepage.png  )
 ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/myaccount.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/myboard.png )
 ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/following.png  )
-![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/favourties.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/favourites.png  )
+![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/prdocutpage.png)
 
 **Tech Stack**
   - HTML5
