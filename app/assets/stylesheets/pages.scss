@@ -1,10 +1,4 @@
 
-.notice{
-  font-size: 14px;
-    font-weight: 500;
-    color: #af7c7c;
-    padding: 40px;
-}
   
   // MY ACCOUNT
 .myaccount_box{
@@ -42,9 +36,11 @@
   display: flex;
   
 }
-// .adjusted_following .wrapper img{
-//   width: 200px;
-//   height: 200px;
+.adjusted_following .wrapper img{
+  width: 200px;
+  height: 200px;}
+
+
 
 // MY BOARD
 .my_board_container {
@@ -117,6 +113,9 @@ padding-left: 10px;
   display: flex;
   align-items: center;
 }
+.followings_box .profile_container img{
+  width: 200px;
+  height: 200px;}
 
 .container .following img{
   width: 200px;
@@ -125,11 +124,15 @@ padding-left: 10px;
 
 .followingline{
   border-top: 1px solid #fff8d4;
-  
-  border-width: 10px;
-  margin: 0;
+  border-width: 4px;
+  margin: 0 0 10px 0;
 }
 
+.followingline1{
+ width: 1px solid #fff8d4;
+ height: 100%;
+  margin: 0 0 10px 0;
+}
 // SHOW
 .follow_button_show{
   display: flex;
