@@ -8,9 +8,10 @@
                 <p class="my_board_follower">#Followers: <%= @followers_count %></p>
                 </div>
                 <div class="col-sm">
-                <p class="my_board_donation">#Dontations: $<%= sprintf( "%0.02f", @donation_total) %></p>
+                <p class="my_board_donation">#Donations: $<%= sprintf( "%0.02f", @donation_total) %></p>
                 </div>
             </div>
+
             <button type="button" class="btn btn-link  btn-lg"><%= render "general/follow", displayed_user_id: @displayed_user.id %></button>
 
         </div>
