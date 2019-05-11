@@ -82,9 +82,10 @@ and run the migrations
 
 
 - **Design Documentation**
-
+![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color1.jpg)
+![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color2.png)
   - Design Process
-  Wireframe/Layout --> ColorPalette
+  Wireframe/Layout --> ColorPalette --> Final Layout/Grid and Styling
  
  
   - **User stories**
