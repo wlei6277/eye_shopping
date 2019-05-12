@@ -300,40 +300,40 @@ Note we are using the AWS API for active record storage
 
 
 Products - full CRUD resource enabling users to interact with and share products
- > Has many comments
- > Has many favourites 
- > Belongs to a department
- > Has an attached picture
+ - Has many comments
+ - Has many favourites 
+ - Belongs to a department
+ - Has an attached picture
  
 
 Departments - describes the category the product belongs to
- > Has many products
+ - Has many products
 
 Comments - full CRUD resources which enables users to comment on products
- > Belongs to a product
- > Belongs to a user
+ - Belongs to a product
+ - Belongs to a user
  
 Favourites - enables users to favourite and unfavourite a product
- > Belongs to a product 
- > Belongs to a user
+ - Belongs to a product 
+ - Belongs to a user
  
 Followers - enables users to follow other users
- > Belongs to follower through the user model
- > Belongs to following through the user model
+ - Belongs to follower through the user model
+ - Belongs to following through the user model
  
 Donations
- > Belongs to donor (user who made the donation) through the user model
- > Belongs to donee (user who the donation is being made to) through the user model
+ - Belongs to donor (user who made the donation) through the user model
+ - Belongs to donee (user who the donation is being made to) through the user model
 
 Users
- > has many favourites
- > has many comments
- > has many products
- > has many followers through the follower_id foreign key
- > has many followings through the following_id foreign key
- > has many donations through the donor_id foreign key
- > has many donors through the donee_id foreign key
- > has an attached user profile image
+ - has many favourites
+ - has many comments
+ - has many products
+ - has many followers through the follower_id foreign key
+ - has many followings through the following_id foreign key
+ - has many donations through the donor_id foreign key
+ - has many donors through the donee_id foreign key
+ - has an attached user profile image
 
 
 **Provide your database schema design.**
@@ -407,6 +407,10 @@ Unfortunately we could not get the Cypress gem to work and therefor could not do
 
 **Discuss and analyse requirements related to information system security.**
 
+Any personal data of the user we are required to keep secure and private. This could include things like the email addresses and credit card information of the user. Personal data should also not be sent via get query as this is easily exposed for malicous use.
+
+We leverage Stripe so that we do not have to store user credit card information in our application. 
+
 Heroku provide SSL certificate with HTTPS so the data is encrypt between server and the user.
 
 **Discuss methods you will use to protect information and data.**
@@ -416,6 +420,7 @@ Heroku provide SSL certificate with HTTPS so the data is encrypt between server 
 > In each controller we have whitelisted parameters provided by the user - this protects against users providing their own and potentially corrupt parameters to use application in unitended ways
 
 **Research what your legal obligations are in relation to handling user data.**
+
 To provide functionality and interaction to users, we will need to collect user activity data.
 
 Although the cookie consent pop-up is not a mandatory requirement in Australia, since the app is not limited to just one market and in the future if we are aiming to expand to Europe, we will need to use cookie consent pop-ups because of the European Union’s (EU) General Data Protection Regulation  (The GDPR not only applies to businesses located within the EU, but also to all businesses , wherever they may be located, that collect personal data from individuals based in the EU)
