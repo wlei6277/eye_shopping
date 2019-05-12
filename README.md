@@ -147,7 +147,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
    
  - **Project plan&Timeline**
- <img src="hhttps://github.com/wlei6277/eye_shopping/blob/master/docs/timeline.png" >
+ <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/timeline.png" >
  
  - **Trello**
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello1.png">
