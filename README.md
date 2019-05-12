@@ -37,6 +37,7 @@ We want to create a platform that provides the online tool where users can not o
 ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/favourites.png  )
 ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/docs/Screenshots/prdocutpage.png)
 
+
 **Tech Stack**
   - HTML5
   - CSS3
@@ -80,13 +81,13 @@ and run the migrations
 (By default the server runs on Port 3000, so to view the live site on your local machine, head to localhost:3000 )
 
 
-
 - **Design Documentation**
 ![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color1.jpg)
 ![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color2.png)
   - Design Process
   Wireframe/Layout --> ColorPalette --> Final Layout/Grid and Styling
  
+
  
   - **User stories**
  Age: 15 (High school)
@@ -133,6 +134,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/New%20Wireframe%203.png">
 
  - **Wireframes**
+ 
 <p align="center">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20BOARD.png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20FAVOURITES%20.png" width="400">
@@ -141,6 +143,7 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/PRODUCT%20LIST%20(%20MainPage).png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/Product%20page.png" width="400">
 </p>
+
  - **Database ERD**
  
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/ERD/erd1.png">
@@ -152,8 +155,6 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
  - **Trello**
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello1.png">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello2.png">
- 
- 
  
  
  
