@@ -91,7 +91,7 @@ class ProductsController < ApplicationController
       end
     else
       @product_creator.link_click_total += 1
-      @product_creator.link_click_revenue += 1
+      @product_creator.link_click_revenue += 10
     end
     
     @product_creator.save
