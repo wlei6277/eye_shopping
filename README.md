@@ -80,14 +80,16 @@ and run the migrations
 
 (By default the server runs on Port 3000, so to view the live site on your local machine, head to localhost:3000 )
 
-- Design Documentation
 
+- **Design Documentation**
+![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color1.jpg)
+![alt text](https://github.com/wlei6277/eye_shopping/blob/master/docs/design/color2.png)
   - Design Process
- ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/prdocutpage.png)
- ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/prdocutpage.png)
- ![alt text]( https://github.com/wlei6277/eye_shopping/blob/master/images/Screenshots/prdocutpage.png)
+  Wireframe/Layout --> ColorPalette --> Final Layout/Grid and Styling
  
-  - User stories
+
+ 
+  - **User stories**
  Age: 15 (High school)
 Sex: Male
 
@@ -127,11 +129,12 @@ I'm Amy, I want to create my baby registry list  so my friends can get the items
 I'm Amy, I want to create my product moodboard so I can present to my followers new upcoming trend.
 
 
-- **Workflow diagram**
+ - **Workflow diagram**
 
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/New%20Wireframe%203.png">
 
-- **Wireframes**
+ - **Wireframes**
+ 
 <p align="center">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20BOARD.png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/MY%20FAVOURITES%20.png" width="400">
@@ -140,18 +143,20 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/PRODUCT%20LIST%20(%20MainPage).png" width="400">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/wireframe/Product%20page.png" width="400">
 </p>
-- **Database ERD**
 
+ - **Database ERD**
+ 
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/ERD/erd1.png">
 
-
-- **Project plan&Timeline**
-<img src="hhttps://github.com/wlei6277/eye_shopping/blob/master/docs/timeline.png" >
-
-- **Trello**
+   
+ - **Project plan&Timeline**
+ <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/timeline.png" >
+ 
+ - **Trello**
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello1.png">
 <img src="https://github.com/wlei6277/eye_shopping/blob/master/docs/trello/trello2.png">
-
+ 
+ 
  
 **SHORT ANSWER QUESTIONS**
 
