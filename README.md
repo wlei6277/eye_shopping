@@ -162,6 +162,8 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 
 **1.What is the need (i.e. challenge) that you will be addressing in your project?**
 
+Our vision is to create a platform that enables users to collaborate in the online shopping experience. Users can create product listings and display these listings in a mood board (similar to pintrest) which they share with Eye Shopping community. Users can  interact with other user's posts (e.g. through commenting and favouriting products) and draw inspiration for future online shopping. They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
+
 **2.Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
 
 - As the internet has become increasingly integrated and adopted by mainstream society the number of online products and services has grown exponentially. Almost any product which is available for purchase offline can be found on the internet. The problem with today's online shopping experience is that although the range of online products is massive, filtering this range to find the product which will fulfill each individual consumers needs and wants is becoming increasingly difficult. Pioneriing behavourial economics and psychology studies reveal that humans find it increasingly difficult to make a decision when the number of choices grows. 
@@ -169,62 +171,111 @@ I'm Amy, I want to create my product moodboard so I can present to my followers 
 - Giant companies are getting better and better at targeting individual consumer wants and needs through avenues such as paid SEO, programmatic advertising (Google AdWords / Facebook Marketing) and influencer campaigns. As the competition instensifies, industries with more constrained resources are finding it increasingly difficult to reach consumers. From the consumers perspective this means that finding products which are outside of the boundarys of well funded marketing budgets is more cubersome.  
 
 **3.Describe the project will you be conducting and how. your App will address the needs.**
-We will provide the marketplace where customers can create their product whishlist and and share with other users. 
+Our project aim is to build a user-driven platform which improves the shopping experience of the online community.  
 
-They will be able to find innovative and updated products available online to provide them with an even better way to find what they need. It can be a tool to find yours out of a million.
+Users of our platform will experience an ad-free space where they can find both unique and trending products. The platform will enable users to create, share and interact with posts which link to a product which is purchaseable online. Users generate income from the content they create on Eye Shopping, supported by affiliate marketing (e.g. Amazon Associates) when site vistors are redirected to retailers websites when they click a link on a post. This will incentivise content creation and enable users to find unique products which are not readily visible in other channels (e.g. through google or advertising).   
+
 
 
 
 **4.Describe the network infrastructure the App may be based on.**
-Our application is browser based. Users connect to our app using an internet connected device which makes HTTP requests to our server. We have hosted Eye Shopping on Heroku using Puma as the server software. This means that the code functionality is made available to users through Puma and the server hardware provided by Heroku.   
+
+Users interact with our app using browser software (e.g. Google Chrome, Mozilla Firefox, Safari etc..) on an internet connected device. The interaction occurs when a user (client device) makes HTTP (the protocol which enables internet devices to communicate with each other through GET / PATCH / PUT / DELETE requests) requests to our server which is hosted on the Heroku platform. Puma (our server side software) makes the code and data hosted on Heroku available to the client device in order to facilitate the HTTP requests. Our database is also hosted Heroku. When users create and interact with data on our website they are interacting with this database.
+
+Eye-shopping also leverages a number of third party services to create the user experience (Stripe for payments and AWS for active record storage of images). These services have their own infrastructure considerations but Eye Shopping is able to utilise their functionality via the same client-server HTTP request mechanism. When users interact with these services on our app, Eye Shopping makes a HTTP requests to the involved third party and parses the response back to the user (this can create a number of different experiences e.g. the user is redirected to stripe checkout / the user uploads a product image which is stored on an AWS server).       
 
 
 **5.Identify and describe the software to be used in your App.**
-		Balsamiq
-		HTML5
-		CSS3
-		Bootstrap (CSS Framework for styling)
-		Ruby on Rails 5.2.1
-		Ruby 2.5.1
-		Visual Studio Code (text editor)
-		Trello ( project management)
-		Git & Github (source countrol)
-		Heroku (deployment)
-		Google Fonts
-		html5 and css3
-		Slack
+
+Wireframe and design software (what we used to develop wireframes to ensure we had a low-fidelty design to guide development at all stages of the project)
+> -Balsamiq
+
+Text editor (what we used to write the code in our app)
+> -Visual Studio Code
+
+Source control
+> -Git
+> -Github
+
+Colloboration tools (software we leveraged to work together and colloborate throughout the development lifecycle)
+> -Trello (project management)
+> -Slack
+
+Markup language (the language to structure the content of our website)
+> -HTML5
+
+Page styling (the software we used to make the content on our website match the design)
+> -CSS3
+> -SASS (CSS Framwork for styling)
+> -Bootstrap (CSS Framework for styling)
+> -Google Fonts
+
+Development languages (the primary programming languages our app is written in)
+> -Ruby on Rails 5.2.1
+> -Ruby 2.5.1
+> -Javascript
+
+Hosting platform (the software and services which hold our data and code)
+> -Heroku (deployment)
+
+Server side language (how our app code and data is made available to the internet) 
+> -Puma 
+
+Testing (how we ensured our app functioned as intended)
+> -Postman
+> -Cypress
+
+
 
 **6.Identify the database to be used in your App and provide a justification for your choice.**
-Postgresql- A relational, SQL database.
-The object-relational database based on spreadsheet with a collection of tables provide easier visualization of the datas.
+Postgresql- A relational, Structured Query Language (SQL) database.
 
+We utilised Postgresql because it is a an object-relational database which fits within the Rails ORM model. This is optimal for the production of dynamic websites because data can easily be stored and visualised within a RESTful pattern. Data is stored in a collection of tables (with a similar appearance to spreadsheets) which we can access using the SQL language. In fact we don't even have to learn SQL because we can leverage the ORM within rails to run SQL queries for us. 
+
+There a number of different SQL databases we have could have chosen instead of postgresql. The pros and cons of chosing postgres are as follows:
+
+Pro:
+- Implements the SQL standard well
+- It supports lots of data types
+- It is well configured for performance optimisation
+
+Con:
+- Not as wide-spread as MySQL
+- Does not have the same level of community support
 
 
 
 **Identify and describe the production database setup (i.e. postgres instance).**
+
 Creating our database with Postgres, we generate the empty directory. In order to save our data, we have to create the table to specify the position of storage.
-Our postgres instance is one to many relationships using 6 tables. [link to ERD] https://dbdiagram.io/d/5cc63f6cf7c5bb70c72fc97e .
+Our postgres instance is one to many relationships using 8	 tables. [link to ERD] https://dbdiagram.io/d/5cc63f6cf7c5bb70c72fc97e .
 
 
 
 **Describe the architecture of your App.**
 
-Our app is written in Rails MVC architectural pattern. 
-The code regarding data storage is written inside of a model, code shown to the user inside of a view and the logic or glue that connect the model and view into the controller.
+Our app is written in the Rails MVC architectural pattern. 
+
+MVC stands for model, view and controller . Each section of code (i.e. the Model / View / Controller) has a specific responsiblity within the web application which creates the users experience at a designated end point (the route). The code regarding data storage is written inside of a model, code to display content to the user is written inside of a view and the logic or glue that connects the model and the view is written into the controller.
 
 
 **Explain the different high-level components (abstractions) in your App.**
+
 The following high-level abstractions enable our Ruby on Rails application to function as intended:
-  > MVC architecture - code is broken down into files, each with a specific purpose within the dynamic website (e.g. code written in models handles data storage). This supports a faster development cycle and enables us to leverage abstractions already baked into Rails (e.g. form view helpers)      
-  > Routing - Configuring routes in the Rails routing file enables users to interact with our site through HTTP requests. Users can navigate and interact with our website using the routes we defined in the routing file. 
-  > APIs - We leveraged the Stripe and AWS APIs to add additional functionality to our application without having to develop this internally. This works because Stripe and AWS have already built the code for this functionality and have enabled us to access this functionality in our own application through their own routing mechanism.
-  > Gems - we leveraged a number of Ruby gems to speed up development and add additional functionality (e.g. Devise, Bootstrap and Cypress) 
+  - MVC architecture - code is broken down into files, each with a specific purpose within the dynamic website (e.g. code written in models handles data storage). This supports a faster development cycle and enables us to leverage abstractions already baked into Rails (e.g. form view helpers)      
+  - Routing - Configuring routes in the Rails routing file enables users to interact with our site through HTTP requests. Users can navigate and interact with our website using the routes we defined in the routing file. 
+  - HTTP - a protocol which enables internet connected devices to connect to each other via request (Get, Post, Put, Patch, Delete). This enables the client device of the user to communicate with our server via our application program interface. 
+  - APIs - We leveraged the Stripe and AWS APIs to add additional functionality to our application without having to develop this internally. This works because Stripe and AWS have already built the code for this functionality and have enabled us to access this functionality in our own application through their own routing mechanism.
+  - Gems - we leveraged a number of Ruby gems to speed up development and add additional functionality (e.g. Devise, Bootstrap and Cypress) 
+
 
 
 
 **Detail any third party services that your App will use.**
-AWS cloud services platform - we use this for active storage of User and Product images
-STRIPE Implementing a payment system - we use this to accept payment from users enabling them to donate to other users
+
+- AWS cloud services platform - we use this for active storage of User and Product images. When a user uploads a (product / profile) image our application sends AWS a http request to store the image on their server. 
+- STRIPE Implementing a payment system - we use this to accept payment from users and allow them to donate to other users. When a user donates to other user they are sent to a stripe checkout with metadata about the transaction (using a Get request to stripe). They then complete the transaction on Stripes appliction and are redirected to the Eye Shopping page (Stripe sends EyeShopping a get request). Eye Shopping also recieves a POST request from Stripe via webhook once the transaction is completed - this routes to a method which confirms the payment 
+
 
 **Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).**
 At the level of our first prototype, the structure is very similar with PINTEREST or INSTAGRAM. Content (data) is user driven and is largely focused on images. As in PINTREST or INSTAGRAM our users are able to follow and share content with other users as well as favourite/ bookmark content.
@@ -301,37 +352,58 @@ Users
 
 **Describe the way tasks are allocated and tracked in your project.**
 
-The main tools we used is Trello . We have allocated the task for each purpose and kept on track. Our task was divided to the Model,View and Controller for each routes.
+Initially we ideated together using a white board to understand and break down the problem we were trying to solve. We then took this and both did seperate User stories to compare our understanding of the project aims and user experience we were aiming to create.
+
+We developed wireframes in parrel and then compared and summarised these to ensure we both had a clear picture of what we were trying to build. 
+
+Heading into developedment we brainstormed the routes, user endpoints and views that would create our desired user expierence. We then split up our work according to these routes. Initially we split the work 50/50 amongst the CRUD resources that would have to be created in order to implement these views (e.g. Dodam took the products model, view and controller and Billy worked on the User Favourites and Followings). That is for each of the resources we each did the M,V and C in order for full funcitoning as a CRUD resource.
+
+We tracked tasks using a Trello Board and Slack Channel. We split tasks using by (backlog, to do, indevelopment, deployed) work flow. Whenever a new task was thought of it would be added to the the to-do section. To signfiy we working on something the task would be in the in development section. To signify it was done it would be moved to the deployed section.
+
 
 **Discuss how Agile methodology is being implemented in your project.**
-First we focused on having a clear idea of what we intend to do and the main goal of the app. Instead of planning the whole week, we spent the first two days to finalize the plan and match the database with wireframe-based actions and ERD. We constantly joined in git to test the code.
+
+First we focused on having a clear idea of what we intend to do and the main goal of the app. Instead of planning the whole week, we spent the first two days to finalize the plan and then decided to meet 3 times a day to check progress and reiterate the plan for the next day. These meetings would go according to the following flow:
+
+-meeting 1 would be first thing in the morning and we would do a stand up, discussing goals for the day and any potential road blocks
+-meeting 2 would be at lunch and we would discuss any issues we were having. Here we would ensure to do a git pull and merge. 
+-meeting 3 would be at the end of the day, we would review progress and review the plan for the week adjusting tasks according to our new estimates for how long things were taking and develop strategies for getting through road block
+
 
 **Provide an overview and description of your Source control process.**
+
 Git/github was used during this assignment for the process of source controll.
-We found it very useful to track all the codes previously written in repository so we could compare and verify with the recend code. We both worked in different branch and pushed in master.
+
+We utilised the command line interface of Git to push and pull from the remote repo. 
+
+We each worked on seperate branches (other than the master) and when we had felt the code was ready to be merged with master we would push our branch to the remote repo and then merge it with the master on github.  We would then pull this master and branch from it to keep working with the latest version of the source code.
+
 
 
 **Provide an overview and description of your Testing process.**
-We have utilised automated browser testing in this project. To do this we leveraged the Cypress gem which walks through the code in our testing files excuting each test case. This opens a browser window and attempts to execute the actions defined in the test file. 
 
-We used automated browser testing for the following reasons:
- > it ensures that users can actually utilise the funcionatility of our app in the way intended
- > we can easily and quickly re-run the tests each time we update the application
- > it avoids human biases and potential for human error in the testing process
+We conducted manual testing of our site. 
+
+To do manual test we developed a spreadsheet whith 6 different coloums.
+ -The feature we were testign
+ -The test we were running
+ -The data we used
+ -The expected result
+ -The actual result
+ -Status
  
-The main tests we performed were:
- > Can a user log-in?
- > Can a user log-out?
- > Can a user create a product?
- > Can a user edit a product?
- > Can a user delete a product?
- > Can a user follow another user?
- > Can a user unfollow another user?
- > Can a user favourite a product?
- > Can a user unfavourite a product?
- > Can a user access the my-board page?
+ Each time we developed a feature or changed the source code we would rerun the tests. Using the elements of the testing framework above  kept the tests consistent each time we ran them (including the test inputs) and ensured good communication around where there may have been bugs
+ 
+For an overview of our testing process please visit this Google docs where we have stored our testing data:
 
+https://docs.google.com/spreadsheets/d/1WI0e70DUcx4ojiJlFVRmS7s5ZRFa49m858gNYo147AM/edit?usp=sharing
+ 
 
+Unfortunately we could not get the Cypress gem to work and therefor could not do automated browser testing. We wanted to use automated browser testing for the following reasons:
+ - it ensures that users can actually utilise the funcionatility of our app in the way intended
+ - we can easily and quickly re-run the tests each time we update the application
+ - it avoids human biases and potential for human error in the testing process
+ 
 
 **Discuss and analyse requirements related to information system security.**
 
