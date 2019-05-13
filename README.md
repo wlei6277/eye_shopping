@@ -1,5 +1,5 @@
 # EYEHOPPING (Marketplace Platform)
-## Link: https://eye-shopping.herokuapp.com/
+## Link: https://eye-shopping2.herokuapp.com/
 ## Repo: https://github.com/wlei6277/eye_shopping
 
 ### Description of platform
