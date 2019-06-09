@@ -11,12 +11,17 @@
   </head>
 
   <body>
+    
     <!-- Partial Navigation -->
     <%= render 'pages/navigation' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        vgLink("<%=Rails.application.credentials.vglink%>");
+    }); 
+    </script>
     <!-- Footer -->
     <br>
     <hr> 
